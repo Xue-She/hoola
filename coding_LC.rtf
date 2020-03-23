@@ -1,0 +1,621 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf610
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset134 PingFangSC-Regular;\f2\fnil\fcharset0 Consolas;
+\f3\fnil\fcharset0 AppleColorEmoji;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red0\green0\blue0;\red29\green38\blue42;
+\red151\green0\blue126;\red20\green0\blue196;}
+{\*\expandedcolortbl;;\csgray\c0;\csgray\c0\c0;\cssrgb\c14902\c19608\c21961;
+\cssrgb\c66667\c5098\c56863;\cssrgb\c10980\c0\c81176;}
+\margl1440\margr1440\vieww15720\viewh13000\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 LC 1, two sum\
+1. 
+\f1 \'b1\'e9\'c0\'fa
+\f0 list
+\f1 \'a3\'ac\'d4\'dadict\'d6\'d0\'b4\'a2\'b4\'e6\'a3\'a8\'d0\'e8\'d2\'aa\'b5\'c4\'d6\'b5\'a3\'ac idx\'a3\'a9\
+2. \'c5\'f6\'b5\'bd\'d0\'e8\'d2\'aa\'b5\'c4\'d6\'b5\'ca\'b1\'a3\'acreturn idx\
+\
+LC 2, add two numbers\
+1. LinkedList\'cc\'e2\'d2\'bb\'b0\'e3\'d0\'e8\'d2\'aa\'d2\'bb\'b8\'f6dummy.next = head\'a3\'ac\'d7\'ee\'ba\'f3return dummy.next\
+2. \'bd\'f8\'ce\'bbcarry\'bf\'c9\'d2\'d4\'d5\'e2\'d1\'f9\'b8\'fc\'d0\'c2\'a3\'bacarry += val; carry //= 10\
+\
+LC 42, trapping rain water\
+1. \'c3\'bf\'b8\'f6\'b5\'e3\'bf\'c9\'d2\'d4\'bb\'fd\'d0\'ee\'b5\'c4\'cb\'ae\'c1\'bf = min(\'cd\'f9\'d7\'f3\'b1\'df\'bf\'b4\'b5\'c4\'d7\'ee\'b8\'df\'d6\'b5lmax\'a3\'ac\'cd\'f9\'d3\'d2\'b1\'df\'bf\'b4\'b5\'c4\'d7\'ee\'b8\'df\'d6\'b5rmax)\
+2. \'bf\'c9\'d2\'d4\'cf\'c8\'d5\'fd\'cf\'f2\'b1\'e9\'c0\'fa\'b5\'c3\'b5\'bdlmax\'a3\'ac\'d4\'d9\'b7\'b4\'cf\'f2\'b1\'e9\'c0\'fa\'b5\'c3\'b5\'bdrmax\
+\
+LC 200, number of islands\
+1. \'b1\'e9\'c0\'fa\'cb\'f9\'d3\'d0\'b5\'e3\'a3\'ac\'c3\'bf\'b4\'ce\'c5\'f6\'b5\'bd\'a1\'ae1\'a1\'af\'a3\'bact++\'a3\'ac\'b4\'a5\'b7\'a2bfs\'a3\'acvisit\'b9\'fd\'b5\'c4\'a1\'ae1\'a1\'af\'b6\'bc\'b1\'e4\'b3\'c9\'a1\'ae0\'a1\'af\
+2. \'bb\'f2\'d5\'dfunion-find\'a3\'ac\'be\'ad\'b9\'fd\'c3\'bf\'b8\'f6\'b5\'e3\'ca\'b1\'c1\'ac\'bd\'d3\'cb\'c4\'d6\'dc\'b5\'c4\'b5\'e3\'a3\'ac\'d7\'ee\'ba\'f3\'bc\'c6\'cb\'e3root\'b5\'c4\'b8\'f6\'ca\'fd\
+\
+LC 146, LRU (least recently used) cache\
+1. hash-map + double-linked-list\
+2. \'bb\'f2\'d5\'df\'d6\'b1\'bd\'d3\'d3\'c3d = collections.OrderedDict(), d.move_to_end(key) and d.popitem(last=False)\
+\
+LC 5, longest palindromic substring\
+1. \'b1\'e9\'c0\'fa\'cb\'f9\'d3\'d0\'b5\'e3\'a3\'ac\'c3\'bf\'b8\'f6\'b5\'e3\'d7\'f7\'ce\'aacenter\'cf\'f2\'c1\'bd\'b1\'df\'d1\'d3\'d5\'b9\'a3\'ac\'d6\'b1\'b5\'bd\'b2\'bb\'ca\'c7palindrome\'cd\'a3\'d6\'b9\
+2. \'d1\'d3\'d5\'b9\'ca\'b1\'bf\'bc\'c2\'c7\'c1\'bd\'d6\'d6\'c7\'e9\'bf\'f6\'a3\'ac\'a1\'aeaba\'a1\'af, \'a1\'aeabba\'a1\'af\
+\
+LC 21, merge two sorted lists\
+1. \'d7\'a2\'d2\'e2\'c9\'e8\'d6\'c3prehead.next = head\'a3\'ac\'d7\'ee\'ba\'f3return prehead.next\
+\
+LC 20, valid parentheses \
+1. d = \{\'a1\'ae)\'a1\'af : \'a1\'ae(\'a1\'af, \'a1\'ae]\'a1\'af : \'a1\'ae[\'a1\'af, \'a1\'ae\}\'a1\'af : \'a1\'ae\{\'a1\'af\}\'a3\'ac\'d3\'f6\'b5\'bd\'d7\'f3\'c0\'a8\'ba\'c5\'be\'cdpush\'bd\'f8stack\
+2. \'d3\'f6\'b5\'bd\'d3\'d2\'c0\'a8\'ba\'c5\'a3\'ac\'b9\'db\'b2\'ecstack[-1]\'ca\'c7\'b7\'f1\'ce\'aa\'b6\'d4\'d3\'a6\'d7\'f3\'c0\'a8\'ba\'c5\'a3\'ac\'c8\'e7\'b9\'fb\'b2\'bb\'ca\'c7return false\
+\
+LC 53, maximum subarray\
+1. DP\'a3\'ac\'b6\'d4\'d3\'da\'c3\'bf\'d2\'bb\'b8\'f6\'b5\'e3\'a3\'ac\'c8\'e7\'b9\'fb\'d7\'ee\'ba\'f3\'b5\'c4optimal range\'ca\'c7\'bd\'e1\'ca\'f8\'d4\'da\'d5\'e2\'c0\'ef\'b5\'c4\'a3\'ac\'d2\'aa\'c3\'b4optimal range\'ca\'c7\'d2\'d4\'b5\'a5\'b5\'e3\'b4\'e6\'d4\'da\'a3\'ac\'d2\'aa\'c3\'b4\'be\'cd\'ca\'c7\'c1\'ac\'bd\'d3\'c9\'cf\'d2\'bb\'b8\'f6\'b5\'e3\'d7\'f6\'bd\'e1\'ce\'b2\'b5\'c4range\
+2. dp[i] = max(nums[i], dp[i-1] + nums[i]), \'d7\'ee\'ba\'f3return max(dp)\
+\
+LC 202, happy number\
+1. n, digit = divmod(n, 10) <\'a1\'aa\'a1\'aa\'a1\'aa> digit = n % 10; n = n // 10, \'bc\'fb\'b9\'fd\'b5\'c4\'ca\'fd\'b4\'a2\'b4\'e6\'d4\'daset()\'c0\'ef\
+\
+LC 15, 3sum\
+1. nums.sort()\'a3\'ac\'b1\'e9\'c0\'fa\'a1\'a3\'b6\'d4\'d3\'da\'c3\'bf\'d2\'bb\'b8\'f6\'b5\'e3i\'a3\'ac\'bf\'bc\'c2\'c7\'b0\'d1\'cb\'fc\'b9\'cc\'b6\'a8\'ce\'aa\'c8\'fd\'b8\'f6\'ca\'fd\'c0\'ef\'b5\'c4\'b5\'da\'d2\'bb\'b8\'f6\'a3\'ac\'d4\'da\'d5\'e2\'b8\'f6\'b5\'e3\'d2\'d4\'d3\'d2\'b5\'c4list\'c0\'ef\'a3\'ac\'c1\'bd\'b8\'f6\'d6\'b8\'d5\'ebl\'a3\'acr\'b7\'d6\'b1\'f0\'d6\'b8\'cf\'f2\'cd\'b7\'ba\'cd\'ce\'b2\
+2. s = num[i] + num[l] + num[r], \'c8\'e7\'b9\'fbs > 0\'a3\'acr\'d7\'f3\'d2\'c6\'a3\'bb\'c8\'e7\'b9\'fbs < 0\'a3\'acl\'d3\'d2\'d2\'c6\'a3\'bb\'c8\'e7\'b9\'fbs == 0\'a3\'ac\'b3\'fd\'c1\'cb\'b0\'d1(i, l, r)\'cc\'ed\'bc\'d3\'d2\'d4\'cd\'e2\'a3\'ac\'bb\'b9\'d2\'aa\'b0\'d1\'c1\'bd\'b8\'f6\'d6\'b8\'d5\'eb\'cc\'f8\'b9\'fd\'d6\'d8\'b8\'b4\'b5\'c4item\
+\
+LC 238, product of array except self (division is NOT allowed)\
+1. l1: \'b4\'d3\'d7\'f3\'cf\'f2\'d3\'d2\'d7\'f6\'c0\'db\'b3\'cb\'a3\'acl2: \'b4\'d3\'d3\'d2\'cf\'f2\'d7\'f3\'d7\'f6\'c0\'db\'b3\'cb\
+2. ans[i] = l1[i-1] * l2[i+1]\
+\
+LC 3, longest substring without repeating characters\
+1. \'b1\'e9\'c0\'fa\'a3\'ac\'c9\'e8\'d6\'c3start\'bc\'c7\'c2\'bc\'c3\'bf\'b6\'cesubstring\'b5\'c4\'bf\'aa\'cd\'b7\'ce\'bb\'d6\'c3\
+2. \'b6\'d4\'d3\'da\'c3\'bf\'b8\'f6chr\'a3\'ac\'cc\'ed\'bc\'d3\'bb\'f2update\'c6\'e4\'d7\'ee\'d0\'c2\'ce\'bb\'d6\'c3\'a3\'ac\'c8\'e7\'b9\'fb\'b7\'a2\'cf\'d6\'c6\'e4\'ce\'bb\'d6\'c3\'d4\'dastart\'d6\'ae\'ba\'f3\'a3\'ac\'bc\'c7\'c2\'bc\'b5\'b1\'c7\'b0substring\'b3\'a4\'b6\'c8\'a3\'ac\'b2\'a2update start\'c1\'ed\'c6\'f0\'d2\'bb\'b6\'ce\'d0\'c2\'b5\'c4substring\
+\
+LC 138, copy list with random pointer\
+1. \'c9\'e8\'d6\'c3\'d2\'bb\'b8\'f6d = \{\}\'a3\'ac\'d2\'bb\'b8\'f6L = []\'a3\'ac\'b1\'e9\'c0\'fa\'be\'c9LL\'a3\'acd[oldNode] = idx, L.append(newNode)\
+2. \'d4\'d9\'b4\'ce\'b1\'e9\'c0\'fa\'be\'c9LL\'a3\'ac\'b3\'fd\'c1\'cb\'c1\'ac\'bd\'d3next\'d6\'ae\'cd\'e2\'a3\'acnewNode.random = L[ d[oldNode] ]\
+3. \'d2\'d4\'c9\'cf\'ca\'c7time O(n), space O(n)\
+4. \'c1\'ed\'d3\'d0\'d2\'bb\'d6\'d6O(1)\'b5\'c4\'b7\'bd\'b7\'a8\'a3\'baA->A\'a1\'af->B->B\'a1\'af->C->C\'a1\'af\'a3\'ac\'b5\'da\'d2\'bb\'b4\'ce\'b1\'e9\'c0\'fa\'d4\'daoldNode\'d6\'d0\'c9\'fa\'b3\'c9newNode\'a3\'ac\'b5\'da\'b6\'fe\'b4\'ce\'bd\'e2\'be\'f6random\'a3\'ac\'b5\'da\'c8\'fd\'b4\'ce\'bd\'e2\'be\'f6next\
+\
+LC 1007, minimum domino rotations for equal row\
+1. \'b1\'e9\'c0\'fa\'a3\'ac\'c3\'bf\'d2\'bb\'c1\'d0\'c8\'a1\'b2\'a2\'bc\'af\'a3\'ac\'c8\'e7\'b9\'fb\'b2\'a2\'bc\'af\'cf\'fb\'ca\'a7\'a3\'acreturn False\
+2. \'c8\'e7\'b9\'fb\'b2\'a2\'bc\'af\'bc\'e1\'b3\'d6\'b5\'bd\'d7\'ee\'ba\'f3\'a3\'ac\'cb\'e6\'b1\'e3\'c8\'a1\'bc\'af\'ba\'cf\'c0\'ef\'b5\'c4\'d2\'bb\'b8\'f6\'ca\'fd\'a3\'acmax(len(nums) - nums.count(x), nums.count(x))\
+\
+LC 56, merge intervals\
+1. \'b0\'b4\'d5\'d5lower boundary\'c5\'c5\'d0\'f2\'a3\'ac\'c8\'bb\'ba\'f3\'b1\'e9\'c0\'fa\'a3\'ac\'c8\'f5\'b5\'b1\'c7\'b0lower range\'b4\'f3\'d3\'da\'c7\'b0\'d2\'bb\'b8\'f6\'b5\'c4higher range\'a3\'ac\'bf\'bc\'c2\'c7\'ba\'cf\'b2\'a2\
+\
+LC 121, best time to buy and sell stock\
+1. \'d7\'da\'d6\'bc\'a3\'ba\'d7\'dc\'d3\'d0\'d2\'bb\'cc\'ec\'ca\'c7\'d2\'aa\'c2\'f4\'b5\'f4\'b5\'c4\'a1\'a3\'b1\'e9\'c0\'fa\'c3\'bf\'b8\'f6\'b5\'e3\'ca\'b1\'a3\'ac\'b0\'d1\'b5\'b1\'c7\'b0\'d6\'b5\'b5\'b1\'d7\'f6\'c2\'f4\'b3\'f6\'bc\'db\'a3\'ac\'bc\'f5\'c8\'a5\'d6\'ae\'c7\'b0\'bc\'fb\'b9\'fd\'b5\'c4\'d7\'ee\'b5\'cd\'bc\'db\'a3\'a8\'d7\'f7\'ce\'aa\'c2\'f2\'c8\'eb\'bc\'db\'a3\'a9\
+2. \'c9\'e8\'d6\'c3\'d2\'bb\'b8\'f6buyPrice\'d7\'f7\'ce\'aa\'b1\'e9\'c0\'fa\'b9\'fd\'cb\'f9\'d3\'d0\'b5\'e3\'b5\'c4\'d7\'ee\'d0\'a1\'d6\'b5\'a3\'ac\'c3\'bf\'bb\'d8\'ba\'cf\'bc\'c7\'b5\'c3\'b8\'fc\'d0\'c2\
+\
+LC 206, reverse linked list\
+1. iterative and recursive, 2 pointer (curr and prev)\
+\
+LC 253, meeting rooms II\
+1. \'b0\'b4\'d5\'d5\'bf\'aa\'ca\'bc\'ca\'b1\'bc\'e4sort\'a3\'ac\'c8\'bb\'ba\'f3\'b1\'e9\'c0\'fa\'a3\'ac\'b2\'a2\'bc\'c7\'c2\'bc(heapq)\'cb\'f9\'d3\'d0\'bb\'e1\'d2\'e9\'d7\'ee\'d4\'e7\'bd\'e1\'ca\'f8\'b5\'c4\'ca\'b1\'bc\'e4 end_time[0]\
+2. \'c8\'e7\'b9\'fb\'cf\'c2\'d2\'bb\'b8\'f6\'bb\'e1\'d2\'e9\'bf\'aa\'ca\'bc\'ca\'b1\'bc\'e4\'d4\'e7\'d3\'da\'cb\'f9\'d3\'d0\'bb\'e1\'d2\'e9\'d7\'ee\'d4\'e7\'bd\'e1\'ca\'f8\'b5\'c4\'ca\'b1\'bc\'e4\'a3\'ac\'bf\'aa\'d0\'c2\'b7\'bf heapq.heappush(end_time, e)\
+3. \'b7\'f1\'d4\'f2\'a3\'ac\'b8\'fc\'d0\'c2\'cf\'d6\'d3\'d0\'b5\'c4\'d7\'ee\'d4\'e7\'bd\'e1\'ca\'f8\'ca\'b1\'bc\'e4 heapq.heapreplace(end_time, e)\
+\
+LC 33, search in rotated sorted array\
+1. binary search, \'c3\'bf\'b4\'ce\'c8\'a1\'d2\'bb\'b8\'f6mid\'ca\'c7\'a3\'ac\'d2\'bb\'b6\'a8\'c4\'dc\'d6\'aa\'b5\'c0\'d2\'bb\'bc\'fe\'ca\'c2\'c7\'e9\'a3\'ba\'b5\'a5\'d4\'f6\'b5\'c4\'c7\'f8\'bc\'e4\'ca\'c7\'d7\'f3\'b1\'df\'bb\'b9\'ca\'c7\'d3\'d2\'b1\'df\
+2. \'c8\'e7\'b9\'fbtarget\'d4\'da\'b5\'a5\'d4\'f6\'c7\'f8\'bc\'e4\'c4\'da\'a3\'ac\'c4\'c7\'bd\'d3\'cf\'c2\'c0\'b4\'be\'cd\'ca\'c7\'b8\'f6\'c6\'d5\'cd\'a8\'b5\'c4binary search\'ce\'ca\'cc\'e2\
+2. \'c8\'e7\'b9\'fbtarget\'a1\'b0\'b2\'bb\'a1\'b1\'d4\'da\'b5\'a5\'d4\'f6\'c7\'f8\'bc\'e4\'c4\'da\'a3\'ac\'c4\'c7\'be\'cd\'b0\'d1two pointers\'d2\'c6\'b6\'af\'b5\'bd\'a1\'b0\'b7\'c7\'a1\'b1\'b5\'a5\'d4\'f6\'c7\'f8\'bc\'e4\'a3\'ac\'bc\'cc\'d0\'f8\
+\
+LC 289, game of life\
+1. \'bd\'a8\'c1\'a2\'d2\'bb\'b8\'f6\'d0\'ce\'d7\'b4\'d2\'bb\'d1\'f9\'b5\'c4\'d0\'c2\'be\'d8\'d5\'f3\'b4\'a2\'b4\'e6\'d3\'b0\'cf\'ec\'a3\'ac\'b1\'e9\'c0\'fa\'cb\'f9\'d3\'d0\'d3\'d0\'c8\'cb\'bf\'da\'b5\'c4\'b8\'f1\'a3\'ac\'b6\'d4\'c6\'e4\'d6\'dc\'ce\'a78\'b8\'f1\'b5\'c4\'d3\'b0\'cf\'ec+1\
+2. \'b0\'b4\'d5\'d5\'a1\'b0\'d3\'b0\'cf\'ec\'a1\'b1\'be\'d8\'d5\'f3\'a3\'ac\'b8\'fc\'d0\'c2\'d4\'ad\'be\'d8\'d5\'f3\'b5\'c4\'d7\'b4\'cc\'ac\
+\
+LC 937, reorder data in log files\
+1. \'bd\'a8\'c1\'a2\'c1\'bd\'b8\'f6list\'b4\'e6\'b7\'c5digit log\'ba\'cdletter log\'a1\'a3\'b1\'e9\'c0\'fa\'a3\'ac\'cd\'a8\'b9\'fdlog.isdigit()\'be\'f6\'b6\'a8\'b0\'d1log\'c8\'d3\'d4\'da\'c4\'c4\'c0\'eflist\'b5\'b1\'d6\'d0\
+2. return sorted(letter, key = lambda i:i[i.find(' '):] + i[:i.find(' ')]) + digit\'a3\'aclambda\'b7\'bd\'b3\'cc\'d6\'d0\'b5\'c4\'b5\'da\'b6\'fe\'cf\'ee\'d3\'c3\'c0\'b4\'b4\'a6\'c0\'ed\'a1\'b0log\'c4\'da\'c8\'dd\'d2\'bb\'d1\'f9\'ca\'b1\'b0\'b4identifier\'c5\'c5\'d0\'f2\'a1\'b1\
+\
+LC 560, subarray sum equals K\
+1. \'b1\'e9\'c0\'fa\'c7\'f3\'c0\'db\'bc\'d3\'a3\'ac\'ca\'b2\'c3\'b4\'ca\'b1\'ba\'f2\'b4\'e6\'d4\'dasubarray\'a3\'bf\'d4\'da\'c0\'db\'bc\'d3\'be\'d8\'d5\'f3\'d6\'d0\'c1\'bd\'b8\'f6\'d6\'b5\'cf\'e0\'bc\'f5\'b5\'c8\'d3\'daK\'b5\'c4\'ca\'b1\'ba\'f2\
+2. \'d3\'da\'ca\'c7\'b1\'e4\'b3\'c9\'c1\'cb2sum\'ce\'ca\'cc\'e2\'a3\'ac\'d4\'da\'c0\'db\'bc\'d3\'be\'d8\'d5\'f3\'d6\'d0\'a3\'ac\'d5\'d2\'b5\'bd\'cb\'f9\'d3\'d0\'c1\'bd\'b8\'f6\'ca\'fd\'cf\'e0\'bc\'f5\'a3\'a8\'ba\'f3\'ca\'fd \'bc\'f5 \'c7\'b0\'ca\'fd\'a3\'a9= K\'b5\'c4\'d7\'e9\'ba\'cf\
+3. \'d7\'a2\'d2\'e2\'a3\'ac\'b2\'bb\'cd\'ea\'c8\'ab\'ca\'c72sum\'ce\'ca\'cc\'e2\'a3\'ac\'cb\'f9\'d2\'d4dict\'d6\'d0\'b4\'e6\'b5\'c4\'b2\'bb\'d4\'d9\'ca\'c7idx\'a3\'ac\'b6\'f8\'ca\'c7count\'a1\'a3\
+4. E.g. K=3\'a3\'ac\'c8\'e7\'b9\'fb\'c5\'f6\'b5\'bd4\'b8\'f62\'a3\'ac\'c4\'c7\'b8\'f6\'d5\'e2\'d0\'a92\'d0\'e8\'d2\'aa5\'c0\'b4\'c5\'e4\'b6\'d4\'ca\'b9\'b5\'c3\'cf\'e0\'b2\'ee\'ce\'aaK\'a3\'acd[5] = 4\'a1\'a3\'c8\'e7\'b9\'fb\'d6\'ae\'ba\'f3\'c5\'f6\'b5\'bd5\'b5\'c4\'bb\'b0\'a3\'ac\'d7\'dc\'ca\'fd\'d6\'b1\'bd\'d3+4\
+\
+LC 22, generate parentheses\
+1. dfs(s, rem_l, rem_r)\'a3\'ac\'ba\'f3\'c1\'bd\'b8\'f6\'b2\'ce\'ca\'fd\'d3\'c3\'c0\'b4\'bc\'c7\'c2\'bc\'bb\'b9\'d3\'d0\'b6\'e0\'c9\'d9\'b8\'f6\'d7\'f3\'d3\'d2\'c0\'a8\'ba\'c5\'c4\'dc\'d3\'c3\
+2. \'c8\'e7\'b9\'fb\'b6\'bc\'ce\'aa0\'a3\'ac\'bc\'c7\'c2\'bc\'b5\'b1\'c7\'b0string\'a3\'bb\'c8\'e7\'b9\'fb\'ca\'a3\'b5\'c4\'d2\'bb\'d1\'f9\'b6\'e0\'a3\'ac\'d6\'bb\'c4\'dc\'cc\'ed\'bc\'d3\'d7\'f3\'c0\'a8\'ba\'c5\'a3\'bb\'c8\'e7\'b9\'fb\'d3\'d2\'c0\'a8\'ba\'c5\'ca\'a3\'b5\'c4\'b6\'e0\'c7\'d2\'bb\'b9\'d3\'d0\'d7\'f3\'c0\'a8\'ba\'c5\'a3\'ac\'d4\'f2\'d7\'f3\'d3\'d2\'b6\'bc\'bf\'c9\'d2\'d4\'cc\'ed\'bc\'d3\
+\
+LC 973, k closest points to origin\
+1. return heapq.nsmallest(K, points, lambda x: x[0] ** 2 + x[1] ** 2)\
+2. \'bb\'f2\'d5\'df\'a3\'ac\'b2\'bb\'d2\'aa\'c7\'f3\'c5\'c5\'d0\'f2\'b8\'f8\'c1\'cb\'d3\'c3divide and conquer\'b5\'c4\'bb\'fa\'bb\'e1\'a1\'a3\'d3\'c3quicksort\'b0\'d1\'cb\'f9\'d3\'d0\'d0\'a1\'d3\'dapivot\'b5\'c4\'d6\'b5\'b7\'c5\'d7\'f3\'b1\'df\'a3\'ac\'b4\'f3\'d3\'dapivot\'b5\'c4\'d6\'b5\'b7\'c5\'d3\'d2\'b1\'df\
+3. \'c8\'e7\'b9\'fbpivot < K\'a3\'acquicksort\'d3\'d2\'b1\'df\'a3\'bb\'b7\'b4\'d6\'ae\'a3\'acquicksort\'d7\'f3\'b1\'df\'a3\'ac\'d6\'aa\'b5\'c0K == pivot\
+\
+LC 322, coin change\
+1. dp = [0] * (amount + 1)\
+2. \'bc\'d9\'c9\'e8\'ce\'d2\'d3\'d01\'a3\'ac2\'a3\'ac5\'c8\'fd\'d6\'d6\'d3\'b2\'b1\'d2\'a3\'ac\'c4\'c7\'c3\'b4\'ce\'aa\'c1\'cb\'b4\'d5\'b9\'bb10\'a3\'ac\'c8\'fd\'d6\'d6\'c7\'e9\'bf\'f6\'a3\'ba9+1\'a3\'ac 8+2\'a3\'ac 5+5\
+3. \'d2\'f2\'b4\'cbdp[10] = min(dp[9], dp[8], dp[5]) + 1\
+\
+LC 54, spiral matrix\
+1. \'d1\'ad\'bb\'b7\'a3\'a8pop\'b5\'da\'d2\'bb\'d0\'d0\'a3\'ac\'c4\'e6\'ca\'b1\'d5\'eb\'d0\'fd\'d7\'aa\'a3\'a9\'d6\'b1\'b5\'bd\'be\'d8\'d5\'f3\'ce\'aa\'bf\'d5\
+2. \'c4\'e6\'ca\'b1\'d5\'eb\'d0\'fd\'d7\'aa\'a3\'bal1 = [*zip(*l1)], l1.reverse() \
+\
+LC 139, word break\
+1. \'b0\'b4\'b5\'a5\'b4\'ca\'b5\'c4\'ce\'b2\'d7\'d6\'c4\'b8\'d7\'f7\'ce\'aakey\'a3\'ac\'b0\'d1\'b5\'a5\'b4\'ca\'b4\'e6\'c8\'ebcollections.defaultdict(list)\
+2. DP = [False] * len(s), DP\'b5\'c4\'c3\'bf\'b8\'f6\'b5\'e3\'b4\'fa\'b1\'ed\'c1\'cb\'d5\'e2\'b8\'f6\'b5\'e3\'d6\'ae\'c7\'b0\'b5\'c4substring\'ca\'c7\'b7\'f1\'b7\'fb\'ba\'cf\'d2\'aa\'c7\'f3\
+3. \'d4\'dadict\'c0\'ef\'d5\'d2\'b5\'bd\'d3\'b5\'d3\'d0\'cf\'d6\'d4\'da\'ce\'b2\'d7\'d6\'c4\'b8\'b5\'c4\'cb\'f9\'d3\'d0\'ba\'f2\'d1\'a1\'a3\'ace.g. \'a1\'aeapple\'a1\'af\'a3\'acDP[i] = True if s[i-5:i] == \'a1\'aeapple\'a1\'af and DP[i-5] == True else False\
+\
+LC 380, insert delete getRandom O(1)\
+1. nums = [] \'b4\'a2\'b4\'e6\'d4\'aa\'cb\'d8\'a3\'ac loc = \{\} \'b4\'a2\'b4\'e6\'d4\'aa\'cb\'d8\'d4\'danums\'d6\'d0\'b5\'c4\'ce\'bb\'d6\'c3\'a3\'acsz\'b4\'a2\'b4\'e6\'d3\'d0\'d0\'a7\'ca\'fd\'d7\'d6\'b5\'c4\'b8\'f6\'ca\'fd\
+2. delete\'ca\'b1\'a3\'ac\'cf\'c8\'cd\'a8\'b9\'fdloc\'d5\'d2\'b5\'bd\'ce\'bb\'d6\'c3\'a3\'ac\'d4\'d9\'b8\'fanums[sz]\'b5\'c4\'ca\'fd\'d7\'d6\'cc\'e6\'bb\'bb\'a3\'ac\'c9\'be\'b5\'f4loc\'d6\'d0\'b5\'c4\'ce\'bb\'d6\'c3\'a3\'ac\'d7\'ee\'ba\'f3sz -= 1\
+3. insert\'ca\'b1\'a3\'ac\'d4\'danums[sz]\'b4\'a6\'cc\'ed\'bc\'d3\'d0\'c2\'ca\'fd\'a3\'acsz ++\
+\
+LC 49, group anagram\
+1. ans = collections.defaultdict(list)\
+2. \'b1\'e9\'c0\'fa\'a3\'acroot = tuple(sorted(word)) or tuple(set(word))\'a3\'acans[root].append(word)\
+\
+LC 91, decode ways\
+1. DP, \'c3\'bf\'b5\'bd\'d2\'bb\'b8\'f6\'d0\'c2\'b5\'c4\'ca\'fd\'a3\'ac \'d5\'e2\'b8\'f6\'ca\'fd\'d2\'aa\'c3\'b4\'d7\'f7\'ce\'aa\'b5\'a5\'b8\'f6\'ca\'fddecode\'a3\'a8\'d6\'bb\'d2\'aa\'b2\'bb\'ca\'c70\'a3\'a9\'a3\'ac\'d2\'aa\'c3\'b4\'d3\'eb\'c7\'b0\'d2\'bb\'ce\'bb\'c1\'ac\'d4\'da\'d2\'bb\'c6\'f0\'cb\'e3\'d2\'bb\'b8\'f6\'c1\'bd\'ce\'bb\'ce\'bb\'ca\'fd\'a3\'a8[10, 26]\'a3\'a9\
+2. \'d2\'f2\'b4\'cb\'a3\'ac\'c3\'bf\'b8\'f6DP\'bb\'d8\'cd\'b7\'bf\'b4\'d2\'bb\'b2\'bd\'ba\'cd\'c1\'bd\'b2\'bd\'bc\'b4\'bf\'c9\'a1\'a3\'d7\'a2\'d2\'e2\'a3\'a1\'c1\'bd\'ce\'bb\'ca\'fd\'b2\'bb\'c4\'dc\'a1\'ae07\'a1\'af\'d5\'e2\'d6\'d6\'d0\'ce\'ca\'bd\'b4\'e6\'d4\'da\
+\
+LC 240, search a 2D matrix II\
+1. \'d2\'d4\'c3\'bf\'d2\'bb\'c1\'d0\'ce\'aa\'d2\'bb\'cc\'f5\'cf\'df\'a3\'ac\'bb\'ad\'cd\'bc\'a3\'ac\'b7\'a2\'cf\'d6\'c3\'bf\'cc\'f5\'cf\'df\'b5\'c4\'d7\'df\'cf\'f2\'b6\'bc\'ca\'c7\'b4\'d3\'d7\'f3\'c9\'cf\'b5\'bd\'d3\'d2\'cf\'c2\'a3\'ac\'c7\'d2\'bb\'a5\'cf\'e0\'b2\'bb\'cf\'e0\'bd\'bb\
+2. \'b4\'d3\'d7\'ee\'b5\'d7\'b2\'e3\'d5\'d2\'b8\'f6\'c0\'ebtarget\'d7\'ee\'bd\'fc\'b5\'c4\'b5\'e3\'a3\'ac\'c8\'e7\'b9\'fb\'b4\'f3\'c1\'cb\'be\'cd\'d1\'d8\'cd\'ac\'d2\'bb\'cc\'f5\'cf\'df\'cf\'f2\'c9\'cf\'a3\'a8\'d0\'d0\'ca\'fd-1\'a3\'a9\'a3\'ac\'c8\'e7\'b9\'fb\'d0\'a1\'c1\'cb\'be\'cd\'d4\'da\'cd\'ac\'d2\'bb\'b2\'e3\'cc\'f8\'b5\'bd\'d3\'d2\'b1\'df\'b5\'c4\'cf\'df\'a3\'a8\'c1\'d0\'ca\'fd+1\'a3\'a9\
+\
+LC 394, decode string\
+1. stack = [ [1, \'a1\'ae\'a1\'af] ]\'a3\'ac\'b1\'e9\'c0\'fastring\'a3\'ac\'c3\'bf\'d3\'f6\'b5\'bd\'d2\'bb\'b8\'f6\'ca\'fd\'d7\'d6\'a3\'ac\'be\'cd\'c9\'fa\'b3\'c9\'d2\'bb\'b8\'f6\'a1\'b0\'bf\'d5\'bf\'f0\'a1\'b1\'b7\'c5\'bd\'f8stack\'c0\'ef\'a3\'ace.g. stack = [ [1, \'a1\'ae\'a1\'af], [3, \'a1\'ae\'a1\'af] ]\
+2. \'d4\'da\'d3\'f6\'b5\'bd\'a1\'ae[\'a1\'af\'d6\'ae\'ba\'f3\'a3\'ac\'be\'cd\'bf\'aa\'ca\'bc\'cd\'f9\'d7\'ee\'ba\'f3\'d2\'bb\'b8\'f6\'bf\'f0\'c0\'ef\'c8\'d3\'d7\'d6\'b7\'fb\'a1\'a3\'d3\'f6\'b5\'bd\'a1\'af]\'a1\'af\'d6\'ae\'ba\'f3\'a3\'ac\'d7\'ee\'ba\'f3\'d2\'bb\'b8\'f6\'bf\'f0\'b8\'c7\'c9\'cf\'a3\'ac\'b2\'a2\'b0\'d1\'cb\'f9\'d3\'d0\'ca\'d5\'bc\'af\'b5\'bd\'b5\'c4\'d7\'d6\'b7\'fb\'c8\'d3\'b5\'bd\'c7\'b0\'c3\'e6\'b5\'c4\'bf\'f0\'c0\'ef\'a1\'a3\
+3. \'ba\'cf\'b2\'a2\'b5\'c4\'ca\'b1\'ba\'f2\'bc\'c7\'b5\'c3\'b3\'cb\'c9\'cf\'bf\'f0\'c9\'cf\'b5\'c4\'ca\'fd\'d7\'d6\
+\
+LC 953, verifying an alien dictionary\
+1. dict\'bc\'c7\'c2\'bc\'c3\'bf\'b8\'f6chr\'b5\'c4idx\'a3\'ac\'b9\'b9\'d4\'ec\'d2\'bb\'b8\'f6function\'b1\'c8\'bd\'cf\'c8\'ce\'d2\'e2\'c1\'bd\'b8\'f6\'b5\'a5\'b4\'ca\'b5\'c4\'b4\'f3\'d0\'a1\
+2. \'b1\'e9\'c0\'fawords\'a3\'ac\'c3\'bf\'b8\'f6\'b5\'a5\'b4\'ca\'ba\'cd\'c7\'b0\'d2\'bb\'b8\'f6\'b5\'a5\'b4\'ca\'d3\'c3function\'b1\'c8\'bd\'cf\'a3\'ac\'ca\'a7\'b0\'dc\'c1\'cb\'be\'cdreturn False\
+\
+LC 11, container with most water\
+1. \'c1\'bd\'b8\'f6\'d6\'b8\'d5\'eb\'a3\'acl = 0, r = len(nums) - 1\'a3\'ac\'b4\'d3\'c1\'bd\'b1\'df\'cf\'f2\'d6\'d0\'bc\'e4\'d2\'c6\'b6\'af\'a3\'ac\'cb\'f9\'d2\'d4\'b5\'d7\'c3\'e6\'bb\'fd\'d4\'bd\'c0\'b4\'d4\'bd\'d0\'a1\
+2. \'b6\'cc\'b0\'e5\'cb\'f9\'d4\'da\'b5\'c4\'d6\'b8\'d5\'eb\'ce\'aa\'a1\'b0support pointer\'a1\'b1\'a3\'ac\'d4\'ad\'d4\'f2\'a3\'ba\'d2\'c6\'b6\'af\'b7\'c7support pointer\'ca\'c7\'c3\'bb\'d3\'d0\'d2\'e2\'d2\'e5\'b5\'c4\'a3\'ac\'d2\'f2\'ce\'aa\'bc\'b4\'ca\'b9\'d5\'d2\'b5\'bd\'c1\'cb\'b8\'fc\'b8\'df\'b5\'c4\'c4\'be\'b0\'e5\'a3\'ac\'cb\'ae\'c6\'bd\'c3\'e6\'d2\'c0\'be\'c9\'b2\'bb\'bb\'e1\'b1\'e4\'a3\'ac\'b5\'ab\'b5\'d7\'c3\'e6\'bb\'fd\'c8\'b4\'b1\'e4\'d0\'a1\'c1\'cb\'a3\'ac\'bb\'fd\'cb\'ae\'b5\'c4\'cc\'e5\'bb\'fd\'d6\'bb\'c4\'dc\'cd\'f9\'d0\'a1\'c1\'cb\'d7\'df\'a1\'a3\
+3. \'d2\'c6\'b6\'af\'d6\'b8\'d5\'eb\'a3\'ac\'d6\'b1\'b5\'bd\'b6\'cc\'b0\'e5\'b2\'bb\'d4\'d9\'ce\'aa\'b6\'cc\'b0\'e5\'a3\'ac\'bb\'bb\'d6\'b8\'d5\'eb\'bd\'d3\'d7\'c5\'d2\'c6\'b6\'af\'a1\'a3\'bc\'c7\'c2\'bc\'c3\'bf\'d2\'bb\'b4\'ce\'d6\'b8\'d5\'eb\'d2\'c6\'b6\'af\'cb\'f9\'b6\'d4\'d3\'a6\'b5\'c4\'cc\'e5\'bb\'fd\'a3\'ac\'d7\'ee\'ba\'f3return\'d7\'ee\'b4\'f3\'d6\'b5\
+\
+LC 994, rotting oranges\
+1. BFS\'a3\'ac\'bc\'c7\'c2\'bc\'b8\'fc\'d0\'c2\'b5\'c4\'b4\'ce\'ca\'fd\'a1\'a3\'d0\'a1\'bc\'bc\'c7\'c9: \'d3\'c3\'c0\'b4\'bc\'c7\'c2\'bc\'cc\'bd\'cb\'f7\'b5\'c4\'c9\'ee\'b6\'c8\'a3\'ba\
+while q: \
+	level += 1 \
+	for i in range(len(q)): \
+		q.pop(); q.append(); \
+\
+LC 31, next permutation\
+1. idx = len(nums) - 1\'a3\'ac\'b4\'d3\'ba\'f3\'cd\'f9\'c7\'b0\'a3\'ac\'d6\'b1\'b5\'bd\'ca\'fd\'d7\'d6\'b2\'bb\'d4\'d9\'d4\'f6\'b4\'f3\'a3\'ac\'d7\'df\'b9\'fd\'b5\'c4\'ca\'fd\'d0\'ce\'b3\'c9\'d2\'bb\'b8\'f6subarray\'a3\'acsubarray.reverse()\
+2. \'bc\'d9\'c9\'e8 idx-1 \'cb\'f9\'d4\'da\'b5\'c4\'ca\'fd\'d7\'d6\'ce\'aa k, \'d4\'dasubarray\'d6\'d0\'d5\'d2\'b5\'bd\'a1\'b0\'bd\'ab\'bd\'ab\'a1\'b1\'b1\'c8k\'b4\'f3\'b5\'c4\'ca\'fd\'d7\'d6\'a3\'acswap\
+\
+LC 17, letter combination of a phone number\
+1. keyboard = \{'2':'abc', '3':'def', '4':'ghi', '5':'jkl', '6':'mno', '7':'pqrs', '8':'tuv', '9':'wxyz'\}\
+2. \'c9\'f5\'d6\'c1\'b6\'bc\'b2\'bb\'d3\'c3DFS\'bb\'f2\'d5\'dfBFS\'a3\'ac\'d7\'ee\'bc\'f2\'b5\'a5\'b4\'d6\'b1\'a9for\'d1\'ad\'bb\'b7\'be\'cd\'bf\'c9\'d2\'d4\
+\
+LC 79, word search\
+1. dfs(i, j, res_word)\'a3\'ac\'bf\'c9\'d2\'d4\'cd\'a8\'b9\'fd\'b1\'ea\'bc\'c7\'a1\'ae-\'a1\'af\'c0\'b4\'b1\'ed\'ca\'be\'d2\'d1\'be\'ad\'c2\'b7\'b9\'fd\'b4\'cb\'b5\'d8\'a3\'ac\'b5\'ab\'d4\'da\'c3\'bf\'b8\'f6dfs function\'b7\'b5\'bb\'d8\'d6\'ae\'c7\'b0\'a3\'ac\'d2\'aa\'b0\'d1\'a1\'ae-\'a1\'af\'bb\'b9\'d4\'ad\'b3\'c9\'d4\'ad\'d6\'b5\
+\
+LC 981, time based key-value store\
+1. HashMap + binary search\
+2. \'c8\'e7\'b9\'fb (timestamp, value) \'ca\'c7\'cf\'f1\'d5\'e2\'d1\'f9\'b4\'e6\'d4\'da\'d2\'bb\'b8\'f6tuple\'c0\'ef\'b5\'c4\'a3\'acbinary search\'ca\'b1\'bf\'c9\'d2\'d4\'d3\'c3 (timestamp, chr(127)) \'c0\'b4\'b1\'dc\'c3\'e2value\'b3\'e5\'cd\'bb\
+\
+LC 7, reverse integer\
+1. x, digit = divmod(x, 10)\'a3\'ac\'cc\'e1\'c8\'a1\'ce\'b2\'ca\'fd\'ba\'cd\'c9\'fa\'b3\'c9\'d0\'c2\'ca\'fd\'bf\'c9\'d2\'d4\'cd\'ac\'ca\'b1\'bd\'f8\'d0\'d0\
+2. \'b1\'f0\'cd\'fc\'c1\'cb\'bf\'bc\'c2\'c7overflow\'b5\'c4\'c7\'e9\'bf\'f6\
+\
+LC 127, word ladder\
+1. \'cb\'e4\'c8\'bb\'bf\'b4\'c6\'f0\'c0\'b4\'b1\'c8\'bd\'cf\'b7\'d1\'ca\'b1\'bc\'e4\'a3\'ac\'b5\'ab\'ca\'c7\'b4\'d3\'c3\'bf\'d2\'bb\'b8\'f6\'b5\'a5\'b4\'ca\'c2\'f5\'cf\'f2\'cf\'c2\'d2\'bb\'b2\'bd\'ca\'b1\'a3\'ac\'d2\'aa\'c9\'fa\'b3\'c9\'cb\'f9\'d3\'d0\'bf\'c9\'c4\'dc\
+2. e.g. \'a1\'aemap\'a1\'af\'b5\'c4\'cf\'c2\'d2\'bb\'b2\'bd\'d3\'d0 \'a1\'aeaap\'a1\'af, \'a1\'aebap\'a1\'af, \'a1\'aecap\'a1\'af \'a1\'ad. \'a1\'aezap\'a1\'af, \'a1\'aembp\'a1\'af, \'a1\'aemcp\'a1\'af \'a1\'ad..\
+3. \'c8\'e7\'b9\'fb\'d3\'c3BFS\'a3\'ac\'c4\'c7\'c3\'b4\'c3\'bf\'b5\'bd\'d2\'bb\'b8\'f6\'b5\'a5\'b4\'ca\'a3\'ac\'d6\'b1\'bd\'d3\'b4\'e6\'d4\'davisit\'be\'cd\'ba\'c3\'a3\'ac\'b2\'bb\'d3\'c3\'d4\'d9\'c4\'c3\'b3\'f6\'c0\'b4\'a3\'ac\'d2\'f2\'ce\'aa\'b5\'da\'d2\'bb\'b8\'f6\'b4\'a2\'b4\'e6\'ca\'b1\'b5\'c4\'b2\'bd\'ca\'fd\'d2\'bb\'b6\'a8\'ca\'c7\'d7\'ee\'c9\'d9\'b5\'c4\'a1\'a3\
+\
+LC 46, permutations\
+\'c2\'d4\
+\
+LC 88, merge sorted array\
+1. three pointers: p1 = m - 1, p2 = n - 1, p = m + n - 1\
+2. \'b0\'d1\'c1\'bd\'b8\'f6\'ca\'fd\'d7\'e9\'d7\'ee\'b4\'f3\'b5\'c4\'ca\'fd\'a3\'ac\'d2\'c0\'b4\'cemerge\'b5\'bdnums1\'b5\'c4\'ce\'b2\'b0\'cd\'d6\'b1\'b5\'bdp1 < 0 or p2 < 0\
+3. \'c8\'e7\'b9\'fbnums2\'bb\'b9\'d3\'d0\'ca\'fd\'c3\'bb\'d3\'d0\'c9\'a8\'b5\'bd\'a3\'ac\'d6\'b1\'bd\'d3\'b8\'b4\'d6\'c6\'b5\'bdnums1\'b5\'c4\'bf\'aa\'cd\'b7\'be\'cd\'ba\'c3\'a3\'acnums1[:p2 + 1] = nums2[:p2 + 1]\
+\
+LC 430, flatten a multilevel doubly linked list\
+1. stack\'a3\'ac\'cf\'c8 append(curr.next)\'a3\'ac\'d4\'d9 append(curr.child)\'a3\'ac\'d2\'aa\'bc\'c7\'b5\'c3\'cf\'c2\'b8\'f6\'d1\'ad\'bb\'b7\'d6\'ae\'c7\'b0\'a3\'accurr.child = None\
+\
+LC 1048, longest string chain\
+1. \'b0\'b4\'d5\'d5\'b5\'a5\'b4\'ca\'b3\'a4\'b6\'c8sort\'a3\'acdp = \{\}\
+2. dp[word] = max([ dp.get(w[:i] + w[i+1:], 0) i for range(len(w)) ]) + 1\
+3. return max(dp.values())\
+\
+LC 221, maximal square\
+1. dp[i][j] \'b4\'fa\'b1\'ed\'d2\'d4 (i, j) \'ce\'aa\'d5\'fd\'b7\'bd\'d0\'ce\'b5\'c4\'d3\'d2\'cf\'c2\'bd\'c7\'a3\'ac\'d5\'e2\'b8\'f6\'d5\'fd\'b7\'bd\'d0\'ce\'c4\'dc\'d3\'d0\'b6\'e0\'b4\'f3\
+2. dp[i][j] = min( dp[i-1][j], dp[i-1][j-1], dp[i][j-1] ) + 1\
+\
+LC 215, kth largest element in an array\
+1. heapq.nlargest(k, nums)[-1]\
+2. \'bb\'f2\'d5\'df\'d3\'c3divide and conquer\'b5\'c4quicksort\
+\
+LC 572, subtree of another tree\
+1. def isEqual(t1, t2) \'c0\'b4\'c5\'d0\'b6\'cf\'c1\'bd\'bf\'c3\'ca\'f7\'ca\'c7\'b7\'f1\'cd\'ea\'c8\'ab\'d2\'bb\'d1\'f9\
+2. \'d4\'da isSubtree() \'c0\'ef\'c3\'e6call isEqual() \
+\
+LC 227, basic calculator II\
+1. stack, \'b5\'da\'d2\'bb\'b4\'ce\'b1\'e9\'c0\'fa\'d3\'f6\'b5\'bd\'b3\'cb\'b3\'fd\'d6\'b1\'bd\'d3\'cb\'e3\'a3\'ac\'b5\'da\'b6\'fe\'b4\'ce\'b1\'e9\'c0\'fa\'d4\'d9\'cb\'e3\'bc\'d3\'bc\'f5\
+2. \'cc\'e1\'c8\'a1\'ca\'fd\'d7\'d6\'b5\'c4\'ca\'b1\'ba\'f2\'bf\'c9\'d2\'d4\'d3\'c3 if i.isdigit(): n = 10 * n + int(i)\
+\
+LC 362, design hit counter (within 300s)\
+1. \'d6\'bb\'cd\'da300\'b8\'f6\'bf\'d3\'a3\'act = [0] * 300\'a3\'acct = [0] * 300\'a3\'ac\'b1\'e0\'ba\'c50-299\'a3\'ac\'b6\'d4\'d3\'da\'c8\'ce\'d2\'e2timestamp\'a3\'ac\'bc\'c6\'cb\'e3 timestamp%300 \'d5\'d2\'b5\'bd\'bf\'d3\'ce\'bb\
+2. \'c8\'e7\'b9\'fb\'bf\'d3\'c0\'ef\'bc\'c7\'c2\'bc\'b5\'c4\'ca\'b1\'bc\'e4\'d3\'ebtimestamp\'d2\'bb\'d6\'c2\'a3\'ac\'d4\'f2 ct[idx]++\'a3\'bb\'b7\'f1\'d4\'f2\'a3\'ac\'b8\'fc\'d0\'c2 t[idx] = timestamp\'a3\'acct[idx] = 1\
+\
+LC 412, fizz buzz\
+1. return ['Fizz' * (not i % 3) + 'Buzz' * (not i % 5) or str(i) for i in range(1, n + 1)]\
+\
+LC 341, flatten nested list iterator\
+1. \'d6\'bb\'d2\'aastack\'c4\'a9\'b6\'cb\'b2\'bb\'c2\'fa\'d7\'e3 self.isInteger()\'a3\'ac\'be\'cd\'d2\'bb\'d6\'b1 self.stack += self.stack.pop().getList()[::-1]\
+\
+LC 125, valid palindrome\
+1. return s == s[::-1]\
+2. \'bb\'f2\'d5\'dftwo pointers\'a3\'ac\'b4\'d3\'cd\'b7\'ce\'b2\'c9\'a8\'b5\'bd\'d6\'d0\'bc\'e4\
+\
+LC 98, validate binary search tree\
+def isValidBST(self, root: TreeNode, floor=float('-inf'), ceiling=float('inf')) -> bool:\
+        if not root:\
+            return True\
+        if root.val <= floor or root.val >= ceiling:\
+            return False\
+        return self.isValidBST(root.left, floor, root.val) and self.isValidBST(root.right, root.val, ceiling)\
+\
+LC 348, design tic-tac-toe (n * n board)\
+1. \'d4\'ad\'d4\'f2\'a3\'ba\'c3\'bf\'d2\'bb\'d0\'d0\'a3\'ac\'c3\'bf\'d2\'bb\'c1\'d0\'a3\'ac\'c1\'bd\'cc\'f5\'b6\'d4\'bd\'c7\'cf\'df\'a3\'ac\'c8\'e7\'b9\'fb\'b4\'e6\'d4\'da\'d2\'bb\'b8\'f6\'b2\'bb\'cd\'ac\'b5\'c4\'c6\'e5\'d7\'d3\'a3\'ac\'d5\'e2\'be\'cd\'cf\'df\'be\'cd\'b7\'cf\'c1\'cb\'a3\'ac\'be\'f6\'b6\'a8\'b2\'bb\'c1\'cb\'ca\'a4\'b8\'ba\
+2. \'b9\'b9\'d4\'ec4\'b8\'f6monitor\'a3\'acrow = [0] * n, col = [0] * n, diag1 = 0, diag2 = 0\'a3\'ac\'c3\'bf\'c2\'e4\'d2\'bb\'bf\'c5\'c6\'e5\'d7\'d3\'a3\'ac\'d4\'da\'b6\'d4\'d3\'a6\'b5\'c4\'ce\'bb\'d6\'c3+1 (player1) \'bb\'f2\'d5\'df-1 (player2)\
+3. \'c4\'c4\'d2\'bb\'b8\'f6monitor\'d6\'d0\'d3\'d0\'ca\'fd\'d7\'d6\'cf\'c8\'b5\'bdn\
+\
+LC 819, most common word\
+1. words = ''.join([ch.lower() if ch.isalpha() else ' ' for ch in paragraph]).split(' ')\
+2. ct = collections.defaultdict(int), \'c8\'bb\'ba\'f3\'cd\'f9\'c0\'ef\'cc\'ee\'ca\'fd\'bc\'b4\'bf\'c9\
+\
+LC 155, min stack\
+1. \'bc\'c7\'c2\'bcmin\'b5\'c4history\'a3\'ac\'c3\'bf\'b4\'cepop\'d6\'b5\'b5\'c4\'ca\'b1\'ba\'f2\'a3\'ac\'c1\'ac\'cd\'achistory\'d2\'bb\'c6\'f0pop\
+\
+LC 347, top K frequent elements\
+1. return [i for i in sorted(count, key=lambda x: count[x], reverse=True)][:k]\
+\
+LC 811, subdomain visit count\
+\'c3\'bb\'c9\'b6\'ba\'c3\'cb\'b5\'b5\'c4\'a3\'ac\'b1\'e9\'c0\'fa\'a3\'acstr.split(\'a1\'ae \'a1\'af) \'d4\'d9 str.split(\'a1\'ae.\'a1\'af) \'a3\'ac\'cd\'f9counter\'c0\'ef\'bc\'d3\'be\'cd\'cd\'ea\'ca\'c2\'b6\'f9\'c1\'cb\
+\
+LC 415, add strings\
+1. \'b6\'cc\'b5\'c4string\'c7\'b0\'c3\'e6\'b2\'b90\'a3\'ac\'b1\'e9\'c0\'fa\'c1\'bd\'b8\'f6string\
+2. s = int(num1[i]) + int(num2[i]) + carry, carry = s // 10\
+\
+LC 13, roman to integer\
+1. \'b1\'e9\'c0\'fa\'a3\'ac\'c8\'e7\'b9\'fb\'ba\'f3\'d2\'bb\'ce\'bb\'b1\'c8\'c7\'b0\'d2\'bb\'ce\'bb\'b4\'f3\'a3\'a8IV\'a3\'a9\'a3\'ac\'c4\'c7\'c3\'b4\'d6\'b8\'d5\'eb\'cc\'f82\'ce\'bb\'a3\'bb\'b7\'f1\'d4\'f2\'b6\'c1\'c8\'a1\'b5\'b1\'ce\'bb\'ca\'fd\'a3\'ac\'d6\'b8\'d5\'eb\'cc\'f81\'ce\'bb\
+\
+LC 706, design hashMap\
+1. \'cf\'c8\'ce\'cakey\'d3\'d0\'b6\'e0\'c9\'d9\'d6\'d6\'bf\'c9\'c4\'dc\'a3\'ac\'c8\'e7\'b9\'fb\'d3\'d01,000,000\'cd\'f2\'d6\'d6\'a3\'ac\'bf\'c9\'d2\'d4\'b4\'b4\'bd\'a8\'d2\'bb\'b8\'f610,000\'b3\'a4\'b6\'c8\'b5\'c4list\
+2. \'b2\'bb\'cd\'ackey\'b7\'c5\'bd\'f8\'cd\'ac\'d2\'bb\'b8\'f6\'bf\'d3\'ce\'bb\'ca\'b1\'a3\'ac\'d3\'c3LinkedList\'bd\'e2\'be\'f6\'a3\'a8\'cf\'c8\'bd\'a8\'d2\'bb\'b8\'f6LinkedNode class\'a3\'a9\
+\
+LC 48, rotate image\
+1. matrix[:] = [*zip(*matrix)]\'a3\'ac\'c3\'bf\'d2\'bb\'d0\'d0\'d4\'dalist.reverse()\
+\
+LC 67, add binary\
+1. \'b6\'cc\'b5\'c4string\'c7\'b0\'c3\'e6\'b2\'b90\'a3\'ac\'b1\'e9\'c0\'fa\'c1\'bd\'b8\'f6string\
+2. s = int(num1[i]) + int(num2[i]) + carry, carry = s // 2\
+\
+LC 70, climbing stairs\
+1. dp[i] = dp[i-1] + dp[i-2]\
+\
+LC 543, diameter of binary tree\
+1. \'d4\'ad\'d4\'f2\'a3\'ba\'d7\'ee\'b3\'a4\'b5\'c4diameter\'d2\'bb\'b6\'a8\'be\'ad\'b9\'fd\'c4\'b3\'b8\'f6node\'a3\'ac\'c6\'e4\'b3\'a4\'b6\'c8 = \'d7\'f3\'b1\'df\'b5\'c4\'c9\'ee\'b6\'c8 + \'d3\'d2\'b1\'df\'b5\'c4\'c9\'ee\'b6\'c8\
+2. dfs\'b1\'e9\'c0\'fa\'c3\'bf\'b8\'f6node\'a3\'ac\'bc\'c7\'c2\'bc\'c3\'bf\'b8\'f6node\'b5\'c4\'d7\'f3\'d3\'d2\'c9\'ee\'b6\'c8\'d6\'ae\'ba\'cd\'a3\'ac\'d7\'ee\'ba\'f3return max\
+\
+LC 387, first unique character in a string\
+1. vis = set()\'a3\'ac\'b1\'e9\'c0\'fa\'a3\'ac\'d3\'f6\'b5\'bd\'d0\'c2chr\'a3\'ac\'be\'cdstring.find(chr)\'a3\'ac\'c8\'e7\'b9\'fb\'ca\'c7 -1\'a3\'ac\'d6\'b1\'bd\'d3return idx\'a3\'ac\'b7\'f1\'d4\'f2\'be\'cd\'b7\'c5\'b5\'bd vis \'c0\'ef\'c3\'e6\
+2. \'b1\'e9\'c0\'fa\'ca\'b1\'c8\'e7\'b9\'fb\'d3\'f6\'b5\'bd vis \'b5\'c4\'ca\'fd\'be\'cd\'d6\'b1\'bd\'d3\'cc\'f8\'b9\'fd\
+3. \'bb\'f2\'d5\'df\'a3\'ac\'b1\'e9\'c0\'fa\'a3\'ac\'d3\'c3dict\'bc\'c7\'c2\'bcidx\'a3\'ac\'c8\'e7\'b9\'fb\'b7\'a2\'cf\'d6dict\'c0\'ef\'d2\'d1\'d3\'d0\'c4\'b3key\'a3\'ac\'be\'cd\'b0\'d1\'c6\'e4idx\'b8\'c4\'b3\'c9-1\'a3\'ac\'d7\'ee\'ba\'f3\'b7\'b5\'bb\'d8min(dict.values())\
+\
+LC 210, course schedule II\
+1. vis = [0] * numCourses, \'b4\'a2\'b4\'e6\'bf\'ce\'b3\'cc\'d7\'b4\'cc\'ac\'a3\'ba0 ~ not visited, -1 ~ visiting, 1 ~ can be finished\
+2. \'c3\'bf\'c3\'c5\'bf\'ce\'b6\'bc\'b6\'d4\'d3\'a6\'d2\'bb\'b8\'f6list\'a3\'ac\'b4\'a2\'b4\'e6\'c7\'b0\'d6\'c3\'bf\'ce\'b3\'cc\'a3\'ac\'be\'cd\'cb\'e3\'c3\'bb\'d3\'d0\'c7\'b0\'d6\'c3\'d2\'b2\'d2\'aa\'d3\'c3[]\
+3. \'b1\'e9\'c0\'fa\'c3\'bf\'c3\'c5\'bf\'ce\'a3\'ac\'c3\'bf\'c3\'c5\'bf\'cedfs\'d2\'bb\'b4\'ce\'a3\'ac\'d7\'a2\'d2\'e2\'a3\'ba\'c3\'bf\'b8\'f6dfs function\'b8\'d5\'bf\'aa\'ca\'bc\'b5\'c4\'ca\'b1\'ba\'f2\'d2\'aa\'b0\'d1\'d7\'b4\'cc\'ac\'b5\'f7\'b3\'c9-1\'a3\'acreturn\'d6\'ae\'c7\'b0\'d2\'aa\'c3\'b4\'d7\'b4\'cc\'ac\'b5\'f7\'b5\'bd1\'a3\'ac\'d2\'aa\'c3\'b4\'b7\'b5\'bb\'d8False\
+4. \'d3\'ebLC 207\'a3\'ac\'ce\'a8\'d2\'bb\'b5\'c4\'b2\'bb\'cd\'ac\'a3\'ac\'be\'cd\'ca\'c7\'d4\'da\'c3\'bf\'b8\'f6dfs function return\'d6\'ae\'c7\'b0\'a3\'ac\'b0\'d1\'b5\'b1\'c7\'b0\'bf\'ce\'ba\'c5append\'b5\'bdans\'d6\'d0\
+\
+LC 34, find first and last position of element in sorted array\
+1. bisect.bisect_left(list, target), bisect.bisect_right(list, target)\
+2. return [-1, -1] if i_start == i_end else [i_start, i_end - 1]\
+\
+LC 9, palindrome number\
+1. \'c8\'a5\'b5\'f4\'b8\'ba\'ba\'c5\'d4\'d9\'b1\'e4\'b3\'c9str\'a3\'ac\'c8\'bb\'ba\'f3\'be\'cd\'b8\'fapalindrome string\'c5\'d0\'b6\'cf\'b7\'bd\'b7\'a8\'d2\'bb\'d1\'f9\
+\
+LC 443, string compression\
+1. \'b1\'e9\'c0\'fa\'a3\'ac\'c3\'bf\'b5\'bd\'d2\'bb\'b4\'a6\'be\'cd\'ca\'fd\'d2\'bb\'cf\'c2\'ba\'f3\'c3\'e6\'d3\'d0\'b6\'e0\'c9\'d9\'d2\'bb\'d1\'f9\'b5\'c4\'a3\'ac\'c9\'c6\'d3\'c3list(str(count))\
+\
+LC 528, random pick with weight\
+1. \'b9\'b9\'bd\'a8 w_list \'c0\'b4\'b4\'a2\'b4\'e6weights\'c0\'db\'bc\'d3\
+2. idx = random.randrange(1, w_list[-1]), return bisect.bisect_left(w_list, idx)\
+\
+LC 14, longest common prefix\
+1. \'cf\'c8\'d5\'d2\'b8\'f6shortest\'a3\'ac\'d2\'d4\'cb\'fc\'ce\'aa\'b1\'ea\'d7\'bc\'a3\'ac\'b1\'e9\'c0\'fa\'a3\'ac\'c8\'e7\'b9\'fb\'c4\'b3\'d2\'bb\'b8\'f6chr\'b4\'e6\'d4\'da\'d2\'bb\'b8\'f6word\'b2\'bb\'d2\'bb\'d1\'f9\'a3\'acreturn False\
+\
+LC 105, construct binary tree form preorder and inorder traversal \'a3\'a8\'bb\'b9\'d3\'d0\'d2\'bb\'b8\'f6\'cc\'e2\'ca\'c7\'d3\'c3preorder\'ba\'cdpostorder\'c0\'b4\'bd\'a8\'ca\'f7\'a3\'a9\
+1. \'bd\'a8\'c1\'a2node\'b6\'bc\'ca\'c7\'bf\'bfpreorder\'d7\'f3\'b1\'dfpop\'b3\'f6\'c0\'b4\'b5\'c4\'d6\'b5\'a3\'ac\'d5\'d2\'b3\'f6\'d5\'e2\'b8\'f6\'d6\'b5\'d4\'dainorder\'b5\'c4\'ce\'bb\'d6\'c3\'a3\'ac\'d7\'f3\'b1\'df\'ca\'c7\'d3\'c3\'c0\'b4\'b9\'b9\'bd\'a8curr.left\'a3\'ac\'d3\'d2\'b1\'df\'d3\'c3\'c0\'b4\'b9\'b9\'bd\'a8curr.right\
+2. \'be\'d9\'c0\'fd\'a3\'acpreorder = [3, 9, 20, 15, 7], inorder = [9, 3, 15, 20, 7], \'b5\'b1\'b5\'da\'d2\'bb\'b8\'f6\'b5\'e3\'d3\'c3 3 \'c0\'b4\'bd\'a8\'c1\'a2\'ca\'b1\'a3\'acinorder\'d6\'d0 3 \'d7\'f3\'b1\'df\'b5\'c4 [9] \'b8\'ba\'d4\'f0\'b9\'b9\'bd\'a8curr.left\'a3\'acinorder\'d6\'d0 3 \'d3\'d2\'b1\'df\'b5\'c4 [20, 15, 7] \'b8\'ba\'d4\'f0\'b9\'b9\'bd\'a8 curr.right\
+\
+LC 680, valid palindrome II \
+1. \'c1\'bd\'b8\'f6\'d6\'b8\'d5\'eb\'a3\'ac\'d2\'bb\'cd\'b7\'d2\'bb\'ce\'b2\'cf\'f2\'d6\'d0\'bc\'e4\'d2\'c6\'b6\'af\'a3\'ac\'d6\'aa\'b5\'c0\'b6\'d4\'d3\'a6\'b5\'c4chr\'b2\'bb\'d2\'bb\'d1\'f9\
+2. \'c1\'bd\'b8\'f6\'d1\'a1\'d4\'f1\'a3\'ac\'cc\'f8\'b9\'fd\'d7\'f3\'b1\'df\'b5\'c4\'d6\'b8\'d5\'eb\'b9\'b9\'bd\'a8palindrome\'a3\'ac\'cc\'f8\'b9\'fd\'d3\'d2\'b1\'df\'b5\'c4\'d6\'b8\'d5\'eb\'b9\'b9\'bd\'a8palindrome\
+\
+LC 78, subsets\
+1. \'cb\'e4\'c8\'bb\'b2\'bb\'ca\'c7dp\'a3\'ac\'b5\'ab\'ca\'c7\'bf\'c9\'d2\'d4\'d3\'c3dp\'b5\'c4\'cb\'bc\'cf\'eb\'a3\'ac\'c4\'c3 [a, b, c] \'be\'d9\'c0\'fd\
+2. \'b3\'f5\'ca\'bc\'bb\'af ans = [[]]\'a3\'ac\'bc\'d9\'cf\'f3\'d2\'bb\'bf\'aa\'ca\'bc\'d6\'bb\'d3\'d0 a\'a3\'ac\'c4\'c7\'c3\'b4 ans = [[], [a]]\
+3. \'cf\'d6\'d4\'da\'bc\'d3\'c8\'eb\'c1\'cb b, \'c4\'c7\'c3\'b4 b \'d0\'e8\'d2\'aa\'ba\'cd ans \'c0\'ef\'b5\'c4\'c3\'bf\'d2\'bb\'b8\'f6 list \'d7\'e9\'ba\'cf\'c9\'fa\'b3\'c9\'d0\'c2\'b5\'c4\'a3\'ac\'d2\'f2\'b4\'cb ans = [[], [a], [b], [a,b]]\
+4. \'d7\'ee\'ba\'f3\'bc\'d3\'c8\'eb\'c1\'cb c, \'cd\'ac\'d1\'f9 c \'d2\'b2\'d0\'e8\'d2\'aa\'ba\'cd ans \'c0\'ef\'b5\'c4\'c3\'bf\'d2\'bb\'b8\'f6 list \'d7\'e9\'ba\'cf\'a3\'acans = [[], [a], [b], [a,b], [c], [a,c], [b,c], [a,b,c]]\
+\
+LC 344, reverse string\
+1. \'d6\'b1\'bd\'d3 s.reverse()\
+\
+LC 134, gas station\
+1. \'b4\'d3\'c8\'ce\'d2\'bb\'b5\'e3\'bf\'aa\'ca\'bc\'a3\'ac\'bc\'d9\'c9\'e8\'d3\'cd\'cf\'e4\'c0\'ef\'b1\'be\'c0\'b4\'d3\'d0\'ba\'dc\'b6\'e0\'d3\'cd\'a3\'ac\'c4\'a3\'c4\'e2\'c5\'dc\'d2\'bb\'c8\'a6\'a3\'ac\'c8\'e7\'b9\'fb\'c1\'f7\'c1\'bf\'bc\'f5\'c9\'d9\'c1\'cb\'a3\'ac\'d6\'a4\'c3\'f7\'ca\'b5\'cf\'d6\'b2\'bb\'c1\'cb\'d3\'c0\'b6\'af\'a3\'ac\'c4\'c7\'c3\'b4\'d4\'da\'d2\'bb\'bf\'aa\'ca\'bc\'d3\'cd\'cf\'e4\'c3\'bb\'d3\'cd\'b5\'c4\'cc\'f5\'bc\'fe\'cf\'c2\'a3\'ac\'ca\'c7\'ce\'de\'c2\'db\'c8\'e7\'ba\'ce\'b6\'bc\'c5\'dc\'b2\'bb\'cf\'c2\'c0\'b4\'d2\'bb\'c8\'a6\'b5\'c4, return -1\
+2. \'c8\'e7\'b9\'fb\'d2\'bb\'c8\'a6\'cf\'c2\'c0\'b4\'d3\'cd\'c1\'bf\'c3\'bb\'d3\'d0\'bc\'f5\'c9\'d9\'a3\'ac\'c4\'c7\'c3\'b4\'d3\'cd\'c1\'bf\'d7\'ee\'c9\'d9\'b5\'c4\'c4\'c7\'b8\'f6\'b5\'e3\'a3\'ac\'be\'cd\'ca\'c7\'bf\'d5\'d3\'cd\'cf\'e4\'b5\'c4\'d7\'ee\'bc\'d1\'b3\'f6\'b7\'a2\'b5\'e3\
+\
+LC 517, coin change 2\
+1. \'c1\'bd\'b2\'e3\'d1\'ad\'bb\'b7\'a3\'ac\'c3\'bf\'d2\'bb\'b8\'f6\'b1\'d2\'d6\'d6\'a3\'a8\'c3\'e6\'d6\'b5\'b4\'d3\'d0\'a1\'b5\'bd\'b4\'f3\'a3\'a9\'a3\'ac\'c5\'dc\'d2\'bb\'b1\'e9dp\
+2. dp[x] = dp[x] + dp[x - coin]\'a3\'ac\'d3\'d2\'ca\'d6\'b1\'df\'b5\'da\'d2\'bb\'cf\'ee\'b4\'fa\'b1\'ed\'b2\'bb\'d3\'c3\'cf\'d6\'d4\'da\'d5\'e2\'b8\'f6\'d3\'b2\'b1\'d2\'a3\'ac\'b5\'da\'b6\'fe\'cf\'ee\'b4\'fa\'b1\'ed\'ca\'b9\'d3\'c3\'cf\'d6\'d4\'da\'d5\'e2\'b8\'f6\'d3\'b2\'b1\'d2\
+3. \'d7\'a2\'d2\'e2\'a3\'ba\'b3\'f5\'ca\'bc\'bb\'af dp = [0] * (amount + 1); dp[0] = 1 <\'a1\'aa \'b4\'fa\'b1\'ed\'c1\'e3\'d4\'aa\'b5\'c4\'ca\'b1\'ba\'f2\'b4\'e6\'d4\'da\'d2\'bb\'d6\'d6\'d7\'e9\'ba\'cf\'a3\'ba\'b2\'bb\'c8\'d3\'d3\'b2\'b1\'d2\
+\
+LC 283, moving zeros\
+1. \'c1\'bd\'b8\'f6\'d6\'b8\'d5\'eb\'a3\'acread = write = 0\'a3\'acread\'b4\'d3\'c7\'b0\'cd\'f9\'ba\'f3\'b6\'c1\'a3\'ac\'d3\'f6\'b5\'bd\'b7\'c7\'c1\'e3\'b5\'c4\'ca\'fd\'be\'cd\'c8\'c3write\'d0\'b4\'a3\'acwrite\'d0\'b4\'cd\'ea\'d2\'bb\'b8\'f6\'be\'cd\'cd\'f9\'ba\'f3\'c5\'b2\'d2\'bb\'cf\'c2\
+2. read\'b1\'e9\'c0\'fa\'cb\'f9\'d3\'d0\'ca\'fd\'d7\'d6\'d2\'d4\'ba\'f3\'a3\'acwrite\'cb\'f9\'d4\'da\'ce\'bb\'d6\'c3\'b5\'c4\'ba\'f3\'c3\'e6\'c8\'ab\'b2\'bf\'b9\'e9\'c1\'e3\
+\
+LC 198, house robber\
+1. dp[i] = max(nums[i] + dp[i-2], dp[i-1])\
+\
+LC 300, longest increasing subsequence\
+1. \'b9\'b9\'bd\'a8 path = [] \'c0\'b4\'b4\'a2\'b4\'e6\'cb\'f9\'d3\'d0\'b3\'a4\'b6\'c8\'b5\'c4path\'a3\'ac\'b5\'b1\'d2\'bb\'b8\'f6\'b3\'a4\'b6\'c8\'d3\'d0\'ba\'dc\'b2\'bb\'cd\'ac\'b5\'c4path\'ca\'b1\'a3\'ac\'bc\'c7\'c2\'bc\'d3\'b5\'d3\'d0\'d7\'ee\'d0\'a1tail\'b5\'c4\'c4\'c7\'cc\'f5\
+2. \'be\'d9\'c0\'fd\'a3\'ac\'b5\'b1\'ce\'d2\'cb\'f9\'be\'ad\'c0\'fa\'b5\'c4\'b5\'e3\'d6\'d0\'a3\'ac\'d3\'d0\'c1\'bd\'cc\'f5\'b3\'a4\'b6\'c8\'ce\'aa3\'b5\'c4path\'a3\'ac[5,6,7] \'ba\'cd [2,3,4]\'a3\'ac\'c4\'c7\'c3\'b4 set path[3-1] = 4\
+3. \'b1\'e9\'c0\'fa\'a3\'ac\'c3\'bf\'b5\'bd\'d2\'bb\'b8\'f6\'b5\'e3\'ca\'b1\'a3\'ac\'d4\'d9\'b1\'e9\'c0\'fapath\'a3\'ac\'c8\'e7\'b9\'fb\'d5\'e2\'b8\'f6\'b5\'e3\'b5\'c4\'d6\'b5\'b1\'c8\'d7\'ee\'b3\'a4path\'b5\'c4tail\'bb\'b9\'d2\'aa\'b4\'f3\'a3\'ac\'cb\'b5\'c3\'f7\'d3\'d0\'d2\'bb\'cc\'f5\'b8\'fc\'b3\'a4\'b5\'c4path\'b3\'f6\'cf\'d6\'c1\'cb\'a3\'ac\'c4\'c7\'c3\'b4\'d4\'dapath\'d6\'d0\'cc\'ed\'bc\'d3\'d0\'c2\'d4\'aa\'cb\'d8\'a1\'a3\
+4. \'c8\'e7\'b9\'fb\'b2\'bb\'c4\'dc\'bb\'f1\'c8\'a1\'d0\'c2path\'a3\'ac\'d2\'b2\'d2\'aa\'b8\'fc\'d0\'c2\'b8\'fc\'b6\'cc\'b5\'c4path\'a3\'ac\'c8\'b7\'b1\'a3path\'b5\'c4tail\'ca\'c7\'d7\'ee\'d0\'a1\'d6\'b5\
+5. \'d7\'ee\'ba\'f3\'a3\'acreturn len(path) - 1\
+\
+LC 103, binary tree zigzag level order traversal\
+1. BFS\'a3\'ac\'c3\'bf\'b8\'f6\'d1\'ad\'bb\'b7\'d6\'d0\'cc\'e1\'c8\'a1stack\'d6\'d0\'cb\'f9\'d3\'d0\'d4\'aa\'cb\'d8\'a3\'ac\'d5\'fd\'d0\'f2\'bb\'b9\'ca\'c7\'c4\'e6\'d0\'f2\'c8\'a1\'be\'f6\'d3\'da\'cb\'f9\'d4\'da\'b2\'e3\'ca\'fd\
+\
+LC 207, course schedule\
+1. vis = [0] * numCourses, \'b4\'a2\'b4\'e6\'bf\'ce\'b3\'cc\'d7\'b4\'cc\'ac\'a3\'ba0 ~ not visited, -1 ~ visiting, 1 ~ can be finished\
+2. \'c3\'bf\'c3\'c5\'bf\'ce\'b6\'bc\'b6\'d4\'d3\'a6\'d2\'bb\'b8\'f6list\'a3\'ac\'b4\'a2\'b4\'e6\'c7\'b0\'d6\'c3\'bf\'ce\'b3\'cc\'a3\'ac\'be\'cd\'cb\'e3\'c3\'bb\'d3\'d0\'c7\'b0\'d6\'c3\'d2\'b2\'d2\'aa\'d3\'c3[]\
+3. \'b1\'e9\'c0\'fa\'c3\'bf\'c3\'c5\'bf\'ce\'a3\'ac\'c3\'bf\'c3\'c5\'bf\'cedfs\'d2\'bb\'b4\'ce\'a3\'ac\'d7\'a2\'d2\'e2\'a3\'ba\'c3\'bf\'b8\'f6dfs function\'b8\'d5\'bf\'aa\'ca\'bc\'b5\'c4\'ca\'b1\'ba\'f2\'d2\'aa\'b0\'d1\'d7\'b4\'cc\'ac\'b5\'f7\'b3\'c9-1\'a3\'acreturn True \'d6\'ae\'c7\'b0\'d2\'aa\'c3\'b4\'d7\'b4\'cc\'ac\'b5\'f7\'b5\'bd1\'a3\'ac\'d2\'aa\'c3\'b4\'b7\'b5\'bb\'d8False\
+\
+LC 204, count primes\
+1. \'b9\'b9\'bd\'a8 nums = list(range(2, n)), \'b1\'e9\'c0\'farange(1, sqrt(n))\'a3\'ac\'c3\'bf\'b5\'bd\'d2\'bb\'b8\'f6\'ca\'fd\'a3\'ac\'b0\'d1\'c6\'e4\'b1\'b6\'ca\'fd\'c8\'ab\'b2\'bf\'b1\'ea\'c1\'e3\
+2. \'b1\'c8\'c8\'e7\'a3\'ac\'b5\'b1\'d3\'f6\'b5\'bd 2 \'ca\'b1\'a3\'ac\'b0\'d1 4,6,8\'a1\'ad \'b1\'ea\'c1\'e3\'a3\'bb\'d3\'f6\'b5\'bd 3 \'ca\'b1\'a3\'ac\'b0\'d1 6,9,12\'a1\'ad \'c8\'ab\'b2\'bf\'b1\'ea\'c1\'e3\
+3. \'d7\'ee\'ba\'f3\'b7\'b5\'bb\'d8nums\'d6\'d0\'d3\'d0\'b6\'e0\'c9\'d9\'b8\'f6\'b7\'c7\'c1\'e3elem\
+\
+LC 733, flood fill\
+1. bfs with memoization \
+\
+LC 256, paint house\
+1. dp[i][0] = costs[i][0] + min(dp[i-1][1], dp[i-1][2])\
+\
+LC 75, sort colors\
+1. two pass\'a3\'ba\'b5\'da\'d2\'bb\'b4\'ce\'b1\'e9\'c0\'facount\'c3\'bf\'d6\'d6\'d1\'d5\'c9\'ab\'b5\'c4\'b8\'f6\'ca\'fd\'a3\'ac\'b0\'b4\'d5\'d5\'d1\'d5\'c9\'ab\'c5\'c5\'d0\'f2\'a3\'bb\'b5\'da\'b6\'fe\'b4\'ce\'b1\'e9\'c0\'fa\'cb\'b3\'d1\'d5\'c9\'ab\'cb\'b3\'d0\'f2overwrite\'d4\'adlist\
+2. \'bb\'f2\'d5\'df\'a3\'acone pass\'a3\'acthree pointers \'d6\'b8\'cf\'f2\'c8\'fd\'d6\'d6\'d1\'d5\'c9\'ab\'a3\'acptr2 \'b4\'d3\'b6\'d3\'ce\'b2\'b3\'f6\'b7\'a2\'a3\'ac\'ca\'d8\'ba\'f2\'d4\'da\'b5\'da\'d2\'bb\'b8\'f6\'b2\'bb\'ca\'c7 2 \'b5\'c4\'ce\'bb\'d6\'c3\'a3\'bbptr0 \'b4\'d3\'b6\'d4\'ca\'d7\'b3\'f6\'b7\'a2\'a3\'ac\'ca\'d8\'ba\'f2\'d4\'da\'b5\'da\'d2\'bb\'b8\'f6\'b2\'bb\'ca\'c7 1 \'b5\'c4\'ce\'bb\'d6\'c3\'a3\'bbptr1 \'ca\'c7\'bf\'aa\'c2\'b7\'cf\'c8\'b7\'e6\'a3\'ac\'d3\'f6\'b5\'bd 1 \'be\'cd\'bd\'d3\'d7\'c5\'cd\'f9\'c7\'b0\'d7\'df\'a3\'ac\'d3\'f6\'b5\'bd 0\'bb\'f22 \'be\'cd\'c8\'d3\'b8\'f8 ptr0\'bb\'f2ptr2\
+\
+LC 242, valid anagram\
+1. \'cf\'c8\'bc\'ec\'b2\'e9\'b3\'a4\'b6\'c8\'ca\'c7\'b7\'f1\'d2\'bb\'d6\'c2\'a3\'ac\'d4\'d9return sorted(s) == sorted(t)\
+\
+LC 36, valid sudoku\
+1. \'b9\'b9\'bd\'a89\'b8\'f6set\'b9\'dc9\'d0\'d0\'a3\'ac9\'b8\'f6set\'b9\'dc9\'c1\'d0\'a3\'ac9\'b8\'f6set\'b9\'dc9\'b8\'f6\'bf\'e9\
+2. \'b1\'e9\'c0\'famatrix\'a3\'ac\'c8\'e7\'b9\'fb\'d4\'aa\'cb\'d8\'d2\'d1\'b3\'f6\'cf\'d6\'d4\'da\'b6\'d4\'d3\'a6\'b5\'c4\'d0\'d0\'a3\'ac\'c1\'d0\'a3\'ac\'bf\'e9\'b5\'c4block\'c0\'ef\'a3\'acreturn False, \'b7\'f1\'d4\'f2\'cc\'ed\'bc\'d3\'bd\'f8set\
+\
+LC 1057, campus bike\
+1. bucket sorting\'a3\'ac\'b1\'e9\'c0\'faworkers\'ba\'cdbikes\'a3\'ac\'c9\'fa\'b3\'c9\'cb\'f9\'d3\'d0distance\'b2\'a2\'b7\'c5\'c8\'eb dist = \{\} \'d6\'d0\'a3\'ackey\'ce\'aadistance\'a3\'acvalue\'ce\'aa(worker_id, bike_id)\
+2. for sorted(dist): \'c8\'e7\'b9\'fb\'d5\'e2\'b8\'f6\'be\'e0\'c0\'eb\'cb\'f9\'b6\'d4\'d3\'a6\'b5\'c4worker\'ba\'cdbike\'bb\'b9\'c3\'bb\'b1\'bbvisit\'a3\'ac\'d4\'f2append\'b5\'bdans\'d6\'d0\
+\
+LC 38, count and say\
+\'c2\'d4\
+\
+LC 1197, minimum knight moves\
+1. DFS + memoization\'a3\'acbase condition: x+y==0 <\'a1\'aa> 0; x+y==2 <\'a1\'aa> 2; x+y==1 <\'a1\'aa> 3\
+2. \'d3\'c9\'d3\'da\'b6\'d4\'b3\'c6\'d0\'d4\'a3\'ac\'c3\'bf\'b4\'ce\'d6\'bb\'d3\'d0\'b8\'f6\'b7\'bd\'cf\'f2\'bf\'c9\'d2\'d4\'d7\'df\'a3\'acmove1 = dfs(abs(x - 1), abs(y - 2))\'a3\'bbmove2 = dfs(abs(x - 2), abs(y - 1))\
+\
+LC 101, symmetric tree\
+1. def helper(tree1, tree2) \'c0\'b4\'c5\'d0\'b6\'cf\'ca\'c7\'b7\'f12\'b8\'f6tree\'ca\'c7\'bb\'a5\'ce\'aa\'b6\'d4\'b3\'c6\'b5\'c4\
+2. return helpe\cf2 r(tree1.left, tree2.right) and helper(tree1.right, tree2.left)\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cb3 LC 50, pow(x, n), fast power\
+\pard\pardeftab720\partightenfactor0
+
+\f2 \expnd0\expndtw0\kerning0
+    def myPow(self, a, b):\
+        if b == 0: return 1\cf4 \
+        \cf5 if\cf4  b < \cf6 0\cf4 : \cf5 return\cf4  \cf6 1.0\cf4  / self.myPow(a, -b)\
+        half = self.myPow(a, b // \cf6 2\cf4 )\
+        \cf5 if\cf4  b % \cf6 2\cf4  == \cf6 0\cf4 :\
+            \cf5 return\cf4  half * half\
+        \cf5 else\cf4 :\
+            \cf5 return\cf4  half * half * a
+\fs26 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \
+LC 328, odd even linked list\
+1. \'c1\'bd\'b8\'f6prehead\'a3\'ac\'b7\'d6\'b1\'f0\'b9\'dc\'c6\'e6\'ca\'fdnode\'ba\'cd\'c5\'bc\'ca\'fdnode\
+2. \'b1\'e9\'c0\'faLL\'a3\'ac\'c2\'d6\'c1\'f7\'b7\'d6\'c5\'e4\'b8\'f8\'c6\'e6\'ca\'fd\'c1\'b4\'ba\'cd\'c5\'bc\'ca\'fd\'c1\'b4\'b5\'c4\'ce\'b2\'b6\'cb\'a3\'ac\'d7\'ee\'ba\'f3\'d4\'d9\'ba\'cf\'d4\'da\'d2\'bb\'c6\'f0\
+\
+LC 136, single number\
+1. \'b7\'bd\'b7\'a81\'a3\'acsum(nums) - sum(set(nums))\
+2. \'b7\'bd\'b7\'a82\'a3\'acvis = set()\'a3\'ac\'c3\'bb\'bc\'fb\'b9\'fd\'b5\'c4\'d7\'f6\'bc\'d3\'b7\'a8\'a3\'ac\'bc\'fb\'b9\'fd\'b5\'c4\'d7\'f6\'bc\'f5\'b7\'a8\
+3. \'b7\'bd\'b7\'a83\'a3\'ac\'d1\'ad\'bb\'b7\'d2\'ec\'bb\'f2\'a3\'acn ^= nums[i]\
+\
+LC 1262, greatest sum divisible by three\
+1. dp = [0, 0, 0], \'b4\'fa\'b1\'ed\'d7\'c5\'d3\'e0\'ca\'fd\'ce\'aa0\'a3\'ac\'d3\'e0\'ca\'fd\'ce\'aa1\'a3\'ac\'d3\'e0\'ca\'fd\'ce\'aa2\'ca\'b1\'b5\'c4greatest sum so far\
+2. \'b1\'e9\'c0\'fanums\'a3\'ac\'c3\'bf\'b8\'f6\'ca\'fd\'d4\'d9\'b1\'e9\'c0\'fadp\'cf\'e0\'bc\'d3\
+3. \'be\'d9\'c0\'fd\'a3\'ac\'c8\'e7\'b9\'fb\'cf\'d6\'d4\'dadp = [3, 1, 0]\'a3\'ac\'d0\'c2\'b1\'e9\'c0\'fa\'b5\'bd\'b5\'c4\'ca\'fd\'ce\'aa5\'a1\'a31) 5+3=8\'a3\'ac\'d3\'e0\'ca\'fd\'ca\'c72\'a3\'acdp = [3, 1, 8]\'a3\'bb2\'a3\'a95+1=6\'a3\'ac\'d3\'e0\'ca\'fd\'ca\'c70\'a3\'acdp = [6, 1, 8]\'a3\'bb3\'a3\'a95+0=5\'a3\'ac\'d3\'e0\'ca\'fd\'ca\'c72\'a3\'acdp = [6, 1, 8]\'a3\'acdp\'b2\'bb\'b8\'fc\'d0\'c2\'d2\'f2\'ce\'aa5<8\
+\
+LC 1202, smallest string with swaps\
+1. union and find\'a3\'ac\'b0\'d1\'d3\'b5\'d3\'d0\'cf\'e0\'cd\'acroot\'b5\'c4char\'b7\'c5\'d4\'da\'d2\'bb\'b8\'f6list\'c0\'ef\'b2\'a2\'c5\'c5\'d0\'f2\
+2. \'b1\'e9\'c0\'fastring\'a3\'ac\'b6\'d4\'d3\'da\'c3\'bf\'b8\'f6idx\'a3\'ac\'d5\'d2\'b8\'f6\'c6\'e4root\'b6\'d4\'d3\'a6\'b5\'c4list\'a3\'acpop\'b3\'f6\'d7\'ee\'d0\'a1\'b5\'c4\
+\
+LC 445, add two numbers II\
+1. \'b1\'e9\'c0\'fa\'c1\'bd\'b8\'f6LL\'a3\'ac\'b0\'d1\'c3\'bf\'b8\'f6node.val\'b7\'c5\'d4\'da\'c1\'b7\'b8\'f6\'b2\'bb\'cd\'acstack\'d6\'d0\
+2. \'b0\'d1\'b6\'cc\'b5\'c4stack\'c7\'b0\'c3\'e6\'b2\'b90\'a3\'ac\'ca\'b9\'b5\'c3\'c1\'bd\'b8\'f6stack\'d2\'bb\'d1\'f9\'b3\'a4\
+3. \'b4\'d3\'c1\'bd\'b8\'f6stack\'ce\'b2\'b6\'cbpop\'d4\'aa\'cb\'d8\'a3\'ac\'cf\'e0\'bc\'d3\'a3\'ac\'bc\'c7\'c2\'bc\'bd\'f8\'ce\'bbcarry\'a3\'ac\'b4\'b4\'bd\'a8\'d0\'c2node\'a3\'ac\'b2\'a2\'c7\'d2curr.next = tail, tail = curr\
+4. \'bd\'e1\'ce\'b2\'b1\'f0\'cd\'fc\'c1\'cb\'d3\'d0\'bd\'f8\'ce\'bb\'ca\'a3\'d3\'e0\'b5\'c4\'bb\'b0\'a3\'ac\'d4\'d9\'bc\'d3\'b8\'f61\
+\
+LC 236, lowest common ancestor of a binary tree\
+1. dfs\'b5\'c4\'b7\'bd\'b7\'a8\'b1\'e9\'c0\'fa\'cb\'f9\'d3\'d0\'b5\'e3\'b2\'a2\'bc\'c7\'c2\'bcpath\'b5\'c4\'b7\'bd\'b7\'a8\'ca\'c7\'b7\'c7\'b3\'a3\'b5\'cd\'d0\'a7\'b5\'c4\
+2. \'d3\'c3recursion\'a3\'ac\'b7\'bd\'b3\'cc\'ca\'c7\'d5\'e2\'c3\'b4\'c0\'ed\'bd\'e2\'b5\'c4\'a3\'ba\'c8\'e7\'b9\'fb\'d5\'e2\'b8\'f6node\'ca\'c7ancestor\'a3\'a8\'b2\'bb\'b9\'dc\'ca\'c7\'d2\'bb\'b8\'f6node\'bb\'f2\'d5\'df\'c1\'bd\'b8\'f6node\'b5\'c4ancestor\'a3\'a9\'a3\'ac\'b6\'bc\'b7\'b5\'bb\'d8\'d5\'e2\'b8\'f6node\'a3\'bb\'c8\'e7\'b9\'fb\'b2\'bb\'ca\'c7\'c8\'ce\'ba\'cenode\'b5\'c4ancestor\'a3\'ac\'b7\'b5\'bb\'d8 None\
+3. \'c8\'e7\'b9\'fb\'d2\'bb\'b8\'f6node\'b5\'c4left\'ca\'c7ancestor\'a3\'acright\'d2\'b2\'ca\'c7ancestor\'a3\'ac\'c4\'c7\'c3\'b4\'b5\'b1\'c7\'b0node\'be\'cd\'ca\'c7\'ce\'d2\'c3\'c7\'d2\'aa\'d5\'d2\'b5\'c4node\
+4. \'c8\'e7\'b9\'fb\'d2\'bb\'b8\'f6node\'b5\'c4left\'ca\'c7ancestor\'a3\'acright\'b2\'bb\'ca\'c7ancestor\'a3\'ac\'c4\'c7\'c3\'b4left\'be\'cd\'ca\'c7\'ce\'d2\'c3\'c7\'d2\'aa\'d5\'d2\'b5\'c4node\
+\
+LC 670, maximum swap\
+1. int to str\'a3\'ac\'b5\'b9\'d0\'f2\'b1\'e9\'c0\'fa\'a3\'ac\'bc\'c7\'c2\'bcmax_so_far \'ba\'cd\'c6\'e4idx\
+2. \'d5\'fd\'d0\'f2\'b1\'e9\'c0\'fa\'a3\'ac\'c8\'e7\'b9\'fb n < max_so_far\'a3\'ac\'bd\'bb\'bb\'bb\'ce\'bb\'d6\'c3\
+\
+LC 392, longest increasing path in a matrix\
+1. dfs with memoization\
+2. dfs\'d6\'d0\'b7\'c0\'d6\'b9\'d7\'df\'bb\'d8\'cd\'b7\'c2\'b7\'b5\'c4\'b7\'bd\'b7\'a8\'a3\'ac\'bf\'c9\'d2\'d4\'ca\'c7\'d4\'dd\'ca\'b1\'b0\'d1\'c4\'b3\'b8\'f6\'d6\'b5\'b1\'e4\'b3\'c9\'a1\'ae-\'a1\'af\'a3\'acreturn \'d6\'ae\'c7\'b0\'d4\'d9\'b0\'d1\'a1\'ae-\'a1\'af \'bb\'b9\'d4\'ad\'b3\'c9\'d4\'ad\'d6\'b5\
+3. \'b5\'ab\'ca\'c7\'d4\'da\'d5\'e2\'b5\'c0\'cc\'e2\'d6\'d0\'d3\'d0\'b8\'fc\'bc\'f2\'b5\'a5\'b5\'c4\'b7\'bd\'ca\'bd\'a3\'ac\'d2\'f2\'ce\'aa\'d6\'bb\'c4\'dc\'d1\'d8\'ca\'fd\'d6\'b5\'b1\'e4\'b4\'f3\'b5\'c4\'b7\'bd\'cf\'f2\'d7\'df\'a3\'ac\'cb\'f9\'d2\'d4\'b2\'bb\'d3\'c3\'d4\'d9\'bf\'cc\'d2\'e2\'b1\'e4\'a1\'ae-\'a1\'af\
+\
+LC 958, check completeness of a binary tree\
+1. bfs w/ deque()\'a3\'ac\'c3\'bf\'b4\'ce leftpop \'b3\'f6\'d2\'bb\'d5\'fb\'b2\'e3\'b5\'c4node\'a3\'ac\'d4\'d9append\'cb\'f9\'d3\'d0\'d7\'d3node\
+2. \'b5\'b1\'b7\'a2\'cf\'d6\'c1\'cb\'d2\'bb\'b8\'f6 None\'a3\'acflag = True\'a3\'ac\'ba\'f3\'c3\'e6pop\'b3\'f6\'c0\'b4\'b5\'c4\'b1\'d8\'d0\'eb\'b6\'bc\'ca\'c7None\'a3\'ac\'b7\'f1\'d4\'f2\'be\'cd\'b2\'bb\'ca\'c7complete tree\
+\
+LC 777, swap adjacent in LR string\
+1. loc_s\'a3\'acloc_e \'b7\'d6\'b1\'f0\'bc\'c7\'c2\'bc start\'a3\'acend \'d6\'d0 L\'a3\'a8\'d5\'fd\'ce\'bb\'d6\'c3\'a3\'a9 \'ba\'cd R\'a3\'a8\'b8\'ba\'ce\'bb\'d6\'c3\'a3\'a9 \'b5\'c4\'ce\'bb\'d6\'c3\
+2. \'b1\'e9\'c0\'fa s, e in zip(loc_s, loc_e)\'a1\'a3\'b5\'b1\'cf\'c2\'c1\'d0\'c8\'ce\'ba\'ce\'d2\'bb\'b8\'f6\'cc\'f5\'bc\'fe\'b2\'bb\'c2\'fa\'d7\'e3\'ca\'b1\'a3\'ac\'b6\'bc\'bf\'c9\'d2\'d4\'d6\'b1\'bd\'d3return False:\
+	a) s, e \'d2\'aa\'b2\'bb\'b6\'bc\'ce\'aa\'d5\'fd\'a3\'ac\'d2\'aa\'b2\'bb\'b6\'bc\'ce\'aa\'b8\'ba\
+	b) s >= e \'a3\'a8i.e. \'c8\'e7\'b9\'fb\'b6\'bc\'ca\'c7R\'a3\'ac\'c4\'c7\'c3\'b4start\'d6\'d0R\'b5\'c4\'ce\'bb\'d6\'c3\'b1\'d8\'d0\'eb\'d4\'daend\'d6\'d0\'b5\'c4\'d3\'d2\'b1\'df\'a3\'bb\'c8\'e7\'b9\'fb\'b6\'bc\'ca\'c7L, \'c4\'c7\'c3\'b4start\'d6\'d0L\'b5\'c4\'ce\'bb\'d6\'c3\'b1\'d8\'d0\'eb\'d4\'daend\'d6\'d0\'b5\'c4\'d7\'f3\'b1\'df\'a3\'a9\
+\
+LC 96, unique binary search trees\
+1. dfs + memoization\'a3\'acct += \'d7\'f3\'b1\'dfchild\'b5\'c4\'bf\'c9\'c4\'dc * \'d3\'d2\'b1\'dfchild\'b5\'c4\'bf\'c9\'c4\'dc\
+2. \'be\'d9\'c0\'fd\'a3\'ac\'b5\'b1 n = 3 \'ca\'b1\'a3\'ac\'d3\'d0\'c8\'fd\'d6\'d6\'c7\'e9\'bf\'f6\'a3\'ba\'d7\'f30\'d3\'d22\'a3\'ac\'d7\'f31\'d3\'d21\'a3\'ac\'d7\'f32\'d3\'d20\
+\
+LC 173, binary search tree iterator\
+1. \'bf\'c9\'d2\'d4\'d4\'dainit\'ca\'b1\'be\'cd\'b0\'d1\'d5\'fb\'b8\'f6tree\'b5\'c4val\'b0\'b4\'cb\'b3\'d0\'f2\'b7\'c5\'d4\'dalist\'c0\'ef\'a3\'a8\'d5\'e2\'d1\'f9\'b1\'c8\'bd\'cf\'d5\'bc\'bf\'d5\'bc\'e4\'a3\'a9\
+2. \'d2\'b2\'bf\'c9\'d2\'d4\'d4\'dacall next()\'ca\'b1\'a3\'ac\'b2\'c5pop\'b3\'f6\'c0\'b4\'d2\'bb\'d0\'a9node\'a3\'a8\'d5\'e2\'d1\'f9\'ca\'a1\'bf\'d5\'bc\'e4\'a3\'a9\
+\
+LC 1130, minimum cost tree from leaf values\
+1. divide and conquer, time O(n^3), dp[i, j] = dp[i, k] + dp[k+1, j] + max(A[i, k]) * max(A[k+1, j]), i & j are index of array interval\
+2. O(n^2)\'b7\'bd\'b7\'a8\'a3\'ac\'d5\'e2\'b8\'f6\'ce\'ca\'cc\'e2\'b5\'c8\'bc\'db\'d3\'da\'a3\'ac\'b8\'f8\'b6\'a8\'d2\'bb\'b8\'f6arr\'a3\'ac\'cc\'f4\'c6\'e4\'d6\'d0\'c8\'ce\'d2\'e2\'c1\'bd\'b8\'f6\'cf\'e0\'c1\'da\'b5\'c4\'ca\'fd a&b\'a3\'ac\'d0\'a1\'b5\'c4\'c4\'c7\'b8\'f6\'ca\'fd\'bd\'ab\'b1\'bb\'c9\'be\'b3\'fd\'a3\'ac\'b6\'f8\'c9\'be\'b3\'fd\'b5\'c4cost\'ca\'c7a*b\'a1\'a3\'ce\'d2\'c3\'c7\'b5\'c4\'c4\'bf\'b1\'ea\'ca\'c7\'a3\'ac\'c8\'e7\'b9\'fb\'b2\'bb\'cd\'a3\'b5\'c4\'cf\'fb\'b3\'fdelem\'d6\'b1\'b5\'bdarr\'d6\'bb\'ca\'a3\'d2\'bb\'b8\'f6\'ca\'fd\'a3\'ac\'d4\'f5\'d1\'f9\'b5\'c4\'cf\'fb\'b3\'fd\'b2\'df\'c2\'d4\'ca\'b9\'b5\'c3 total cost \'d7\'ee\'d0\'a1\
+3. \'bd\'d3\'d7\'c52\'a3\'acarr\'d6\'d0\'d7\'ee\'d0\'a1\'b5\'c4\'c4\'c7\'b8\'f6\'ca\'fd\'bf\'cf\'b6\'a8\'bf\'c9\'ca\'c7\'cf\'c8\'b1\'bb\'cf\'fb\'b3\'fd\'a3\'ac\'d2\'f2\'ce\'aa\'cf\'fb\'b3\'fd\'b5\'c4cost\'c8\'a1\'be\'f6\'d3\'da\'d5\'e2\'b8\'f6\'ca\'fd\'ba\'cd\'c1\'bd\'b1\'df\'ca\'e9\'b5\'c4\'b3\'cb\'bb\'fd\'a3\'ac\'cf\'d6\'d4\'da\'b2\'bb\'cf\'fb\'b3\'fd\'a3\'ac\'d2\'d4\'ba\'f3\'d4\'d9\'cf\'fbcost\'d6\'bb\'bf\'c9\'c4\'dc\'b1\'e4\'b4\'f3\'a1\'a3\'d2\'f2\'ce\'aa\'a3\'ac\'c3\'bf\'b4\'ce\'d5\'d2\'b5\'bdarr\'d6\'d0\'d7\'ee\'d0\'a1\'d6\'b5pop\'b5\'f4\'a3\'accost\'ca\'c7\'b1\'c8\'bd\'cf\'b8\'fa\'c1\'bd\'b1\'df\'ca\'fd\'b5\'c4\'b3\'cb\'bb\'fd\'a3\'ac\'bf\'b4\'cb\'ad\'b8\'fc\'d0\'a1\'a3\'ac\
+4. O(n) \'b7\'bd\'b7\'a8\'a3\'ac\'cb\'bc\'c2\'b7\'cd\'acO(n^2)\'d2\'bb\'d1\'f9\'a3\'ac\'b5\'ab\'b2\'bb\'d3\'c3\'c3\'bf\'b4\'ce\'d5\'d2\'b5\'bdmin(arr)\'a3\'ac\'ca\'b5\'bc\'ca\'c9\'cf\'a3\'ac\'d6\'bb\'d2\'aa\'c8\'fd\'b8\'f6\'c1\'ac\'d0\'f8\'b5\'c4\'ca\'fd\'c2\'fa\'d7\'e3[\'b4\'f3\'a3\'ac\'d0\'a1\'a3\'ac\'b4\'f3]\'b5\'c4\'b9\'d8\'cf\'b5\'a3\'ac\'d6\'d0\'bc\'e4\'c4\'c7\'b8\'f6\'ca\'fd\'be\'cd\'bf\'c9\'d2\'d4\'b0\'b2\'c8\'ab\'b5\'c4pop\'b5\'f4\'a3\'ac\'d2\'f2\'b4\'cb\'d4\'dafirst pass\'ca\'b1\'a3\'ac\'d6\'bb\'d2\'aa\'cb\'d1\'cb\'f7\'b5\'bd\'d5\'e2\'d1\'f9\'b5\'c4\'b9\'d8\'cf\'b5\'a3\'ac\'be\'cd\'bf\'c9\'d2\'d4\'d6\'b1\'bd\'d3pop\'b5\'f4\'a3\'ac\'b2\'bb\'c2\'fa\'d7\'e3\'b5\'c4\'be\'cd\'cf\'c8\'b4\'e6\'d4\'dastack\'d6\'d0\'a3\'ac\'d3\'da\'ca\'c7\'ce\'d2\'c3\'c7\'b5\'c3\'b5\'bd\'d2\'bb\'b8\'f6\'b5\'dd\'bc\'f5\'b5\'c4stack\'a3\'acsecond pass\'ca\'b1\'d4\'d9\'c0\'db\'b3\'cb\'bc\'b4\'bf\'c9.\
+\
+LC 496, next greater element I\
+1. \'cf\'fb\'cf\'fb\'c0\'d6\'a3\'ac\'b1\'e9\'c0\'fanums2\'b7\'c5\'c8\'ebstack\'d6\'d0\'a3\'ac\'c3\'bf\'b4\'ce\'b1\'c8\'bd\'cfstack\'d6\'d0\'d7\'ee\'ba\'f3\'d2\'bb\'b8\'f6\'ca\'fd\'a3\'ac\'c8\'e7\'b9\'fb\'d0\'c2\'ca\'fd\'b8\'fc\'b4\'f3\'a3\'ac\'d4\'f2pop\'b3\'f6\'c0\'b4\'b7\'c5\'b5\'bddict\'c0\'ef\'a3\'ac\'ca\'b1\'bf\'cc\'c8\'b7\'b1\'a3stack\'d6\'d0\'ca\'c7\'d2\'bb\'b8\'f6\'b5\'dd\'bc\'f5\'ca\'fd\'c1\'d0\
+\
+LC 503, next greater element II\
+1. \'cf\'fb\'cf\'fb\'c0\'d6\'a3\'ac\'d4\'ad\'c0\'ed\'ba\'cd LC 496 \'d2\'bb\'d1\'f9\'a3\'ac\'d6\'bb\'b2\'bb\'b9\'fd\'d2\'aa\'b1\'e9\'c0\'fa2\'b1\'e9\'a3\'ac\'b5\'da\'d2\'bb\'b1\'e9\'d5\'d2\'ba\'f3\'c3\'e6\'b5\'c4\'ca\'fd\'a3\'ac\'b5\'da\'b6\'fe\'b1\'e9\'d5\'d2\'c7\'b0\'c3\'e6\'b5\'c4\'ca\'fd\
+2. stack\'d6\'d0\'d0\'e8\'d2\'aa\'b4\'a2\'b4\'e6tuple, (index, val)\
+\
+LC 102, binary tree level order traversal\
+1. bfs + deque, \'c3\'bf\'b8\'f6 iteration \'d6\'d0 deque.pop() \'b5\'c4\'b4\'ce\'ca\'fd = \'b5\'b1\'c7\'b0 len(deque)\
+2. \'bc\'f2\'b5\'a5\'b0\'e6\'b5\'c4 LC 103\
+\
+LC 268, missing number\
+1. \'b5\'c8\'b1\'c8\'ca\'fd\'c1\'d0\'c7\'f3\'ba\'cd\'a3\'acn * (n + 1) // 2 - sum(nums)\
+\
+LC 152, maximum product subarray\
+1. \'b1\'e9\'c0\'fa for i in range(sz)\'a3\'ac\'b2\'a2\'b8\'fc\'d0\'c2 dp_min & dp_max\
+1. dp_min \'b1\'ed\'ca\'be\'b5\'bd\'d2\'d4\'b5\'dai\'cf\'ee\'ce\'aa\'d6\'d5\'d6\'b9\'b5\'c4interval\'c0\'ef\'a3\'acmin product\
+2. dp_max \'b1\'ed\'ca\'be\'b5\'bd\'d2\'d4\'b5\'dai\'cf\'ee\'ce\'aa\'d6\'d5\'d6\'b9\'b5\'c4interval\'c0\'ef\'a3\'acmax product\
+\
+LC 437, path sum III\
+1. helper(), input: TreeNode, return: list(), \'d2\'d4\'d5\'e2\'b8\'f6node\'ce\'aaroot\'a3\'ac\'cb\'f9\'d3\'d0\'bf\'c9\'c4\'dc\'b5\'c4sum\
+2. list\'c0\'ef\'d3\'d0\'b6\'e0\'c9\'d9\'b8\'f6target sum\'a3\'ac\'bd\'e1\'b9\'fb\'be\'cd\'bc\'d3\'bc\'b8\
+3. \'b7\'bd\'b7\'a8\'b6\'fe\'a3\'badfs + twoSum + memoization\'a3\'ac\'c3\'bf\'b5\'bd\'d2\'bb\'b8\'f6node\'ca\'b1\'a3\'ac\'bc\'c7\'c2\'bc\'cf\'c2root\'b5\'bd\'d5\'e2\'b8\'f6node\'b5\'c4path sum\'a3\'ac\'b2\'a2\'d2\'d4counter\'b5\'c4\'d0\'ce\'ca\'bd\'b4\'e6\'d4\'dacache\'c0\'ef\
+4. \'b8\'f9\'be\'dd twoSum \'d4\'ad\'c0\'ed\'a3\'ac\'b5\'b1 currPathSum - target \'b5\'c4\'d6\'b5\'c4\'dc\'d4\'da cache \'c0\'ef\'c3\'e6\'d5\'d2\'b5\'bd\'ca\'b1\'a3\'ac\'bd\'e1\'b9\'fb\'bc\'b4\'bf\'c9+1\'a1\'a3\
+5. \'a3\'a1\'a3\'a1\'a3\'a1\'b1\'f0\'cd\'fc\'c1\'cb\'d4\'dareturn\'d6\'ae\'c7\'b0\'a3\'accounter[currPathSum] -= 1\'a3\'ac\'d2\'f2\'ce\'aareturn\'d2\'e2\'ce\'b6\'b5\'c4path branch\'bb\'bb\'c1\'cb\'a3\'ac\'cf\'d6\'d4\'da\'cb\'f9\'d4\'da\'b5\'e3\'b5\'c4pathSum\'b2\'bb\'c4\'dc\'d4\'d9\'b1\'bb\'ce\'b4\'c0\'b4\'b5\'c4node\'cb\'f9\'d3\'c3\
+\
+LC 349, intersection of two arrays\
+1. return list(set(nums1) & set(nums2))\
+\
+LC 116, populating next right pointers in each node\
+1. \'c3\'bf\'d2\'bb\'b2\'e3\'a3\'ac\'b4\'d3\'d7\'f3\'b5\'bd\'d3\'d2\'b1\'e9\'c0\'fa\
+2. \'c3\'bf\'d2\'bb\'b8\'f6\'b5\'e3\'a3\'ac\'cf\'c8\'c1\'ac\'d7\'d4\'bc\'ba\'b5\'c4children, curr.left.next = curr.right\'a3\'bb\'d4\'d9\'b8\'fa\'c5\'d4\'b1\'dfnode\'b5\'c4children\'c1\'ac\'a3\'accurr.right.next = curr.next.left\
+\
+LC 222, count complete tree nodes\
+1. \'bb\'bb\'d2\'bb\'d6\'d6\'cb\'bc\'c2\'b7\'a3\'ac\'c8\'e7\'b9\'fb\'b0\'d1node\'b0\'b4\'b4\'d3\'c9\'cf\'b5\'bd\'cf\'c2\'b4\'d3\'d7\'f3\'b5\'bd\'d3\'d2\'b5\'c4\'cb\'b3\'d0\'f2\'b1\'e0\'ba\'c5\'a3\'a8\'b4\'d31\'bf\'aa\'ca\'bc\'a3\'a9\'a3\'ac\'c4\'c7\'c3\'b4\'d6\'bb\'d2\'aa\'b5\'c3\'b5\'bd\'d7\'ee\'ba\'f3\'d2\'bb\'b8\'f6node\'b5\'c4\'b1\'e0\'ba\'c5\'bc\'b4\'bf\'c9\
+2. \'b6\'d4\'d3\'da\'c3\'bf\'b8\'f6node\'a3\'ac\'c8\'e7\'b9\'fbdepth(curr.left) == depth(curr.right), \'c4\'c7\'c3\'b4\'d7\'ee\'ba\'f3\'d2\'bb\'b8\'f6\'b5\'e3\'bf\'cf\'b6\'a8\'d4\'da\'d3\'d2\'ca\'d6\'b1\'df\'a3\'ac\'b7\'b4\'d6\'ae\'d4\'f2\'d4\'da\'d7\'f3\'ca\'d6\'b1\'df\
+3. \'c8\'e7\'b9\'fb\'ca\'c7\'cd\'f9\'d7\'f3\'cf\'c2\'d5\'d2\'a3\'ac\'c4\'c7\'c3\'b4idx = idx * 2\'a3\'bb\'c8\'e7\'b9\'fb\'ca\'c7\'cd\'f9\'d3\'d2\'cf\'c2\'d5\'d2\'a3\'ac\'c4\'c7\'c3\'b4idx = idx * 2 + 1\
+\
+LC 19, remove Nth node from end of list\
+1. prehead.next = head\'a3\'ac\'d7\'ee\'ba\'f3return prehead.next\
+2. \'c1\'bd\'b8\'f6pointer\'a3\'acone fast one slow\'a3\'acfast\'cf\'c8\'d7\'dfn\'b2\'bd\'a3\'ac\'c8\'bb\'ba\'f3\'c1\'bd\'b8\'f6pointer\'d4\'d9\'d2\'bb\'c6\'f0\'d7\'df\'a3\'ac\'d6\'b1\'b5\'bdfast == None\
+\
+LC 234, palindrome linked list\
+1. two pointers, one fast one slow. fast \'d7\'df\'c1\'bd\'b2\'bd slow \'d7\'df\'d2\'bb\'b2\'bd\
+2. slow \'d4\'da\'d7\'df\'b5\'c4\'ca\'b1\'ba\'f2\'a3\'ac\'d2\'aa\'b0\'d1\'be\'ad\'b9\'fd\'b5\'c4 linkedlist \'d7\'aa\'cf\'f2\
+3. \'d2\'d4\'c9\'cf\'b5\'c4\'b7\'bd\'b7\'a8 space O(1), time O(n)\
+\
+LC 703, kth largest element in a stream\
+1. \'cf\'c8nums.sort()[-k:]\'a3\'ac\'d4\'d9heap.heapify(nums)\
+2. call add()\'ca\'b1\'a3\'acnums \'b2\'bb\'b9\'bbk\'ce\'bb\'be\'cdheapq.heappush(), \'b9\'bb\'c1\'cb\'be\'cdheapq.heapreplace()\
+\
+LC 416, partition equal subset sum\
+1. \'ce\'ca\'cc\'e2\'b5\'c8\'bc\'db\'d3\'da\'d5\'d2\'b5\'bdsubarray.sum() = array.sum() / 2, \'ca\'c7\'d2\'bb\'b8\'f6\'bf\'c9\'d3\'c3DP\'b5\'c4\'b1\'b3\'b0\'fc\'ce\'ca\'cc\'e2(knapsack)\
+2. dp[i][j] \'b1\'ed\'ca\'be\'ca\'c7\'b7\'f1\'bf\'c9\'d2\'d4\'d3\'c3array\'c0\'ef\'b5\'c4\'c7\'b0 i \'b8\'f6\'ca\'fd\'d7\'e9\'b3\'c9 sum=j \'b5\'c4 subarray\
+3. dp[i][j] = dp[i-1][j] or dp[i-1][j-nums[i]]\'a3\'ac\'d3\'d2\'ca\'d6\'b1\'df\'b5\'da\'d2\'bb\'cf\'ee\'a3\'ac\'a1\'b0\'c8\'e7\'b9\'fb\'b2\'bb\'d3\'c3\'d0\'c2\'ca\'fd\'d0\'d0\'b2\'bb\'d0\'d0\'a1\'b1\'a3\'ac\'b5\'da\'b6\'fe\'cf\'ee\'a3\'ac\'a1\'b0\'c8\'e7\'b9\'fb\'d3\'c3\'c1\'cb\'d0\'c2\'ca\'fd\'d0\'d0\'b2\'bb\'d0\'d0\'a1\'b1\
+4. \'b6\'fe\'ce\'ac\'b5\'c4dp\'be\'d8\'d5\'f3\'bf\'c9\'d2\'d4\'bc\'f2\'bb\'af\'ce\'aa\'d2\'bb\'ce\'ac\'a3\'ac\'b5\'ab\'d2\'aa\'d7\'a2\'d2\'e2\'b5\'da\'b6\'fe\'b2\'e3for loop\'d2\'aa\'a1\'b0\'b4\'d3\'b4\'f3\'b5\'bd\'d0\'a1\'a1\'b1\'b1\'e9\'c0\'fa\'a3\'ac\'d2\'d4\'b1\'a3\'d6\'a4\'bb\'f1\'c8\'a1 dp[j-nums[i]] \'ca\'b1\'c8\'d4\'ca\'c7\'c9\'cf\'d2\'bb\'b2\'e3\'b5\'c4\'d6\'b5\
+\
+LC 1049, last stone weight II\
+1. \'d7\'aa\'bb\'bb\'ce\'ca\'cc\'e2\'a3\'acstones = [a,b,c,d,e,f,g], ans = f- (a - (b - (c-d) - e) - g), \'ce\'de\'c2\'db\'ca\'c7\'b6\'e0\'c3\'b4\'b8\'ba\'d4\'f0\'b5\'c4\'d0\'ce\'ca\'bd\'a3\'ac\'d7\'ee\'d6\'d5\'d2\'bb\'b6\'a8\'bf\'c9\'d2\'d4\'d0\'b4\'b3\'c9 ans = (a+b+c) - (d+e+f+g) \'c0\'e0\'cb\'c6\'b5\'c4\'d0\'ce\'ca\'bd. \'d3\'da\'ca\'c7\'ce\'ca\'cc\'e2\'be\'cd\'b1\'e4\'b3\'c9\'c1\'cb\'a3\'ac\'b0\'d1\'ca\'af\'cd\'b7\'b7\'d6\'c1\'bd\'b8\'f6\'b0\'fc\'d7\'b0\'a3\'ac\'d4\'f5\'c3\'b4\'b7\'d6\'c5\'e4\'ca\'b9\'b5\'c3\'c1\'bd\'b8\'f6\'b0\'fc\'b5\'c4\'d6\'d8\'c1\'bf\'b2\'ee\'d7\'ee\'d0\'a1\
+2. \'b1\'e9\'c0\'fastones\'a3\'ac\'ca\'b9\'d3\'c3set() \'b4\'a2\'b4\'e6\'b5\'b1\'c7\'b0\'cb\'f9\'d3\'d0\'bf\'c9\'c4\'dc\'b5\'c4sum\'a3\'ac\'d7\'ee\'ba\'f3\'d5\'d2\'b5\'bdset\'d6\'d0\'b5\'c4\'d4\'aa\'cb\'d8 i \'ca\'b9\'b5\'c3 abs(sum(stones) - i - i) \'d7\'ee\'d0\'a1\'bc\'b4\'bf\'c9\'a1\'a3\'d7\'a2\'a3\'bai \'ca\'c7\'b5\'da\'d2\'bb\'b8\'f6\'b0\'fc\'b5\'c4\'ca\'af\'cd\'b7\'d6\'d8\'c1\'bf\'a3\'acsum(stones) - i \'be\'cd\'ca\'c7\'b5\'da\'b6\'fe\'b8\'f6\'b0\'fc\'b5\'c4\'ca\'af\'cd\'b7\'d6\'d8\'c1\'bf\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f3 \cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1 \cf0 LC 739, daily temperatures\
+1. \'b4\'d3\'ba\'f3\'cd\'f9\'c7\'b0\'b1\'e9\'c0\'fa\'ce\'c2\'b6\'c8\'a3\'ac\'b2\'a2\'b0\'d1\'ce\'c2\'b6\'c8\'b5\'c4\'a1\'b1\'d0\'f2\'ba\'c5\'a1\'b1\'b4\'a2\'b4\'e6\'d4\'dastack\'d6\'d0\'a3\'ac\'c8\'e7\'b9\'fb\'b5\'b1\'c7\'b0\'ce\'c2\'b6\'c8\'d0\'a1\'d3\'daT[stack[0]]\'a3\'ac\'c4\'c7\'c3\'b4\'d2\'bb\'c7\'d0\'ba\'c3\'cb\'b5\'a3\'acstack.appendleft(i)\
+2. \'c8\'e7\'b9\'fb\'b5\'b1\'c7\'b0\'ce\'c2\'b6\'c8\'b8\'df\'d3\'daT[stack[0]]\'a3\'ac\'c4\'c7\'c3\'b4 stack.popleft() \'d6\'b1\'b5\'bd\'b5\'b1\'c7\'b0\'ce\'c2\'b6\'c8\'d0\'a1\'d3\'da T[stack[0]]\'a3\'ac\'d5\'e2\'ca\'b1\'ba\'f2 stack[0] \'bc\'b4\'ca\'c7\'a1\'b0\'cf\'c2\'d2\'bb\'b8\'f6\'b8\'fc\'b8\'df\'ce\'c2\'b5\'c4\'c8\'d5\'c6\'da\'a1\'b1\
+\
+LC 1192, critical connections in a network\
+1. \'b1\'be\'d6\'ca\'c9\'cf\'ca\'c7\'c5\'d0\'b6\'cf edge \'ca\'c7\'b7\'f1\'d4\'da cycle \'d6\'d0\'a3\'ac\'c8\'e7\'b9\'fb\'d2\'bb\'b8\'f6 edge \'b2\'bb\'d4\'da\'c8\'ce\'ba\'ce\'d2\'bb\'b8\'f6 cycle \'d6\'d0\'a3\'ac\'d4\'f2\'cb\'fc\'d2\'bb\'b6\'a8\'ce\'aa critical connection\
+2. \'b6\'a8\'d2\'e5rank: \'b4\'d3 node0 \'b3\'f6\'b7\'a2\'b5\'bd\'c1\'ed\'d2\'bb\'b8\'f6 node\'a3\'ac\'cb\'f9\'d7\'df\'b9\'fd\'b5\'c4\'b2\'bd\'ca\'fd\'ce\'aa rank\
+3. dfs(curr, prev, depth) \'b7\'b5\'bb\'d8\'b5\'c4\'ca\'c7\'b5\'b1\'c7\'b0 node \'b5\'c4\'d7\'ee\'d0\'a1 rank\'a3\'ac\'b5\'b1\'c9\'ed\'b4\'a6 curr node \'ca\'b1\'a3\'ac\'d3\'c3 dfs \'b9\'db\'b2\'ec\'cb\'c4\'d6\'dc\'b5\'c4\'cf\'e0\'c1\'da node \'b5\'c4 rank\'a3\'a8\'b3\'fd\'c1\'cb prev node\'a3\'a9\'a3\'ac\'c8\'e7\'b9\'fb\'c4\'b3\'b8\'f6\'c1\'d9\'b5\'e3\'b5\'c4 rank \'b5\'c8\'d3\'da\'b5\'b1\'c7\'b0 rank + 1\'a3\'ac\'c4\'c7\'c3\'b4\'d2\'bb\'c7\'d0\'d5\'fd\'b3\'a3\'a3\'bb\'c1\'d9\'b5\'e3\'b5\'c4 rank \'d0\'a1\'d3\'da\'cb\'fc\'a3\'ac\'d6\'a4\'c3\'f7\'c7\'b0\'b7\'bd\'d3\'d0\'bd\'dd\'be\'b6\'a3\'ac\'d2\'b2\'be\'cd\'ca\'c7\'d5\'e2\'cc\'f5 edge \'b4\'a6\'d4\'da\'d2\'bb\'b8\'f6cycle\'d6\'d0\'a3\'ac\'c4\'c7\'c3\'b4\'be\'cd\'b0\'d1\'b8\'c3 edge \'cc\'ed\'bc\'d3\'b5\'bd ans \'d6\'d0\'a1\'a3\'cd\'ac\'ca\'b1\'a3\'ac\'b1\'f0\'cd\'fc\'c1\'cb\'bc\'c7\'c2\'bc\'cb\'f9\'d3\'d0\'b7\'c7 prev node \'b5\'c4 rank \'b5\'c4\'d7\'ee\'d0\'a1\'d6\'b5\'d3\'c3\'d3\'da return.\
+4. \'ce\'d2\'c3\'c7\'bb\'b9\'d0\'e8\'d2\'aa\'d2\'bb\'b8\'f6 list \'c0\'b4\'b4\'a2\'b4\'e6\'cb\'f9\'d3\'d0 node \'d4\'da\'b5\'b1\'c7\'b0\'cc\'bd\'cb\'f7\'bd\'f8\'b3\'cc\'d6\'d0\'b5\'c4\'d7\'ee\'d0\'a1 rank\'a1\'a3\'cb\'fc\'bf\'c9\'d2\'d4\'b3\'f5\'ca\'bc\'bb\'af\'b3\'c9\'c8\'ab\'b8\'ba list\'a3\'ac\'d5\'e2\'d1\'f9\'bb\'b9\'bf\'c9\'d2\'d4\'d3\'c3\'c0\'b4\'b5\'b1\'d7\'f6 visited \'c0\'b4\'d3\'c3\
+\
+LC 1268, search suggestions system\
+1. products \'cf\'c8\'c5\'c5\'d0\'f2\
+2. \'b6\'d4\'d3\'da\'d2\'d1\'d3\'d0\'b5\'c4prefix\'a3\'ac\'cd\'a8\'b9\'fdbisect_left\'d4\'daproducts\'d5\'d2\'b5\'bd\'ce\'bb\'d6\'c3\'a3\'ac\'b4\'d3\'d5\'e2\'b8\'f6\'ce\'bb\'d6\'c3\'c6\'f0\'ba\'f3\'c3\'e6\'c8\'fd\'b8\'f6products\'bc\'b4\'ca\'c7suggested words\
+3. \'d7\'a2\'d2\'e2\'a3\'ac\'b6\'d4\'d3\'dasuggested words\'bb\'b9\'d2\'aa\'c5\'d0\'b6\'cf str.startswith(prefix)\'a3\'ac\'c8\'e7\'b9\'fb\'ca\'c7True\'b2\'c5\'cc\'ed\'bc\'d3\'bd\'f8\'b4\'f0\'b0\'b8\
+\
+LC 472, concatenated words\
+1. dfs(w) return True/False, \'bd\'a8\'c1\'a2memoization, visTure = visFalse = set()\'a3\'ac \'bd\'a8\'c1\'a2 d=set(words)\
+2. \'b6\'d4\'c3\'bf\'d2\'bb\'b8\'f6\'b5\'a5\'b4\'ca\'a3\'ac\'b4\'d3\'d3\'d0\'b5\'bd\'d3\'c5\'b1\'e9\'c0\'fa\'c9\'e8\'c1\'a2threshold\'a3\'ac\'b7\'d6\'b3\'c9prefix\'ba\'cdsuffix\'a3\'acif (prefix in d) and (suffix in d or dfs(suffix)): return True\
+\
+LC 957, prison cells after N days\
+1. \'b9\'b9\'bd\'a8\'d2\'bb\'b8\'f6 simulator(cells)\
+2. \'b4\'a2\'b4\'e6\'c3\'bf\'d2\'bb\'b2\'bd\'b5\'c4 cells\'a3\'acrun simulation\'a3\'ac\'d6\'b1\'b5\'bd\'d5\'d2\'b5\'bd\'b8\'fa\'d6\'ae\'c7\'b0\'d6\'d8\'b8\'b4\'b5\'c4 cells\
+\
+LC 692, top K frequent words\
+1. counter words\
+2. \'d2\'aa\'b2\'bb\'c8\'bbsort\'c1\'cb\'d2\'d4\'ba\'f3\'c8\'a5\'c7\'b0k\'ce\'bb\'a3\'ac\'d2\'aa\'b2\'bb\'c8\'bbheapq.nlargeest()\
+\
+LC 1239, Maximum Length of a Concatenated String with Unique Characters\
+1. \'c3\'bb\'d3\'d0\'b4\'cf\'c3\'f7\'b5\'c4\'b7\'bd\'ca\'bd\
+2. \'c0\'fb\'d3\'c3set()\'b1\'e9\'c0\'fa arr, \'c9\'fa\'b3\'c9\'cb\'f9\'d3\'d0\'bf\'c9\'c4\'dc\'b5\'c4 concatenated string, \'c8\'bb\'ba\'f3\'d5\'d2\'d7\'ee\'b3\'a4\'b5\'c4\
+\
+273. Integer to English Words\
+1. \'b2\'b9\'c6\'eb\'b5\'bd12\'ce\'bb\'a3\'ac\'b2\'bb\'b9\'bb\'b5\'c4\'c7\'b0\'c3\'e6\'cc\'ed0\'a3\'ac\'b9\'b9\'d4\'echelper function\'b0\'d1\'c3\'bf\'c8\'fd\'ce\'bb\'ca\'fd\'d7\'aa\'bb\'bb\'b3\'c9\'ce\'c4\'d7\'d6\'a3\'ace.g. \'a1\'ae123\'a1\'af -> \'a1\'aeone hundred twenty three\'a1\'af\
+2. \'d7\'a2\'d2\'e2\'a3\'ac40\'ca\'c7forty\'b2\'bb\'ca\'c7fourty\
+\
+151. Reverse Words in a String\
+1. str.split(\'a1\'ae \'a1\'ae)\'a3\'ac\'c8\'bb\'ba\'f3\'b3\'d6\'d0\'f8pop()\'a3\'ac\'c8\'e7\'b9\'fb\'b2\'bb\'ca\'c7\'a1\'b1\'a1\'b1(\'bf\'d5string)\'a3\'ac\'be\'cdappend\'b5\'bdans\'d6\'d0\
+\
+794. Valid Tic-Tac-Toe State\
+1. \'c9\'e8\'d6\'c38\'b8\'f6monitor\'a3\'a83\'d0\'d0+3\'c1\'d0+2\'b8\'f6\'b6\'d4\'bd\'c7\'cf\'df\'a3\'a9\'a3\'ac\'b1\'e9\'c0\'fa\'cb\'f9\'d3\'d0\'ce\'bb\'d6\'c3\'a3\'ac\'ca\'c7X\'be\'cd\'d4\'da\'b6\'d4\'d3\'a6\'b5\'c4monitor+1\'a3\'ac\'ca\'c7O\'be\'cd\'d4\'da\'b6\'d4\'d3\'a6\'b5\'c4monitor-1\'a3\'bb\'d4\'d9\'c9\'e8\'bc\'c6ct_X, ct_O\'cd\'b3\'bc\'c6\'c6\'e5\'d7\'d3\'ca\'fd\
+2. \'c8\'ce\'d2\'e2\'d2\'bb\'b8\'f6monitor\'b4\'ef\'b5\'bd+3\'bb\'f2\'d5\'df-3\'a3\'ac\'be\'cd\'c8\'cf\'ce\'aa\'a1\'b0win\'a1\'b1\
+3. \'c5\'d0\'b6\'cf\'b7\'d6\'c8\'fd\'b2\'bd\'a3\'ac1\'a3\'a9\'b5\'b1X\'d3\'ae\'ca\'b1\'a3\'ac\'d2\'aa\'b1\'a3\'d6\'a4 ct_X = ct_O + 1 \'c7\'d2 O\'c3\'bb\'d3\'ae\'a3\'bb2\'a3\'a9\'b5\'b1O\'d3\'ae\'ca\'b1\'a3\'ac\'d2\'aa\'b1\'a3\'d6\'a4 ct_X = ct_O \'c7\'d2 X\'c3\'bb\'d3\'ae\'a3\'bb3\'a3\'a9\'b5\'b1\'b6\'bc\'c3\'bb\'d3\'ae\'ca\'b1\'a3\'ac\'b1\'a3\'d6\'a4 ct_X = ct_O \'bb\'f2\'d5\'df ct_X = ct_O + 1 \
+\
+218. The Skyline Problem\
+1. \'b0\'d1\'d2\'bb\'b6\'b0\'c2\'a5\'b5\'c4\'c6\'f0\'b5\'e3idx\'ba\'cd\'d6\'d5\'b5\'e3idx concatenate \'d4\'da\'d2\'bb\'c6\'f0\'d7\'e9\'b3\'c9list\'a3\'ac\'b3\'c9\'ce\'aaevent\'a3\'ac\'b2\'a2\'c5\'c5\'d0\'f2\'a3\'bb\'d4\'d9\'bd\'a8\'d2\'bb\'b8\'f6heap\'a3\'ac\'b4\'a2\'b4\'e6 height\
+2. \'b1\'e9\'c0\'faevent\'a3\'ac\'c3\'bf\'b8\'f6\'d1\'ad\'bb\'b7\'d7\'f6\'c1\'bd\'bc\'fe\'ca\'c2\'a3\'ac1\'a3\'a9while heap\'d6\'d0\'d7\'ee\'b4\'f3\'b5\'c4height\'b6\'d4\'d3\'a6\'b5\'c4idx\'d0\'a1\'d3\'da\'b5\'b1\'c7\'b0idx\'a3\'ac\'d4\'f2heap.pop()\'a3\'bb2) heap.push(h_new)\'a3\'ac\'c8\'e7\'b9\'fb h_new \'b4\'f3\'d3\'da\'b5\'b1\'c7\'b0h_max\'a3\'ac\'d4\'f2\'b8\'fc\'d0\'c2h_max\'a3\'ac\'b2\'a2\'b4\'a2\'b4\'e6\'d4\'daans\'d6\'d0\
+3. \'d7\'a2\'d2\'e2\'ca\'c2\'cf\'ee\'a3\'ac1\'a3\'a9heapq \'d6\'d0\'b4\'a2\'b4\'e6\'b5\'c4\'ca\'c7\'d7\'ee\'d0\'a1\'d6\'b5\'a3\'ac\'d2\'f2\'b4\'cb\'d2\'aa\'d7\'aa\'bb\'bb\'ce\'aa\'a1\'b0\'b8\'ba\'a1\'b1\'b5\'c4\'b8\'df\'b6\'c8\'a3\'bb2\'a3\'a9\'b5\'b1\'d2\'bb\'b8\'f6\'c2\'a5\'b5\'c4\'d6\'d5\'d6\'b9 i_e \'ba\'cd\'ba\'f3\'d2\'bb\'b6\'b0\'c2\'a5\'b5\'c4\'c6\'f0\'b5\'e3 i_s \'d6\'d8\'ba\'cf\'ca\'b1\'a3\'ac\'d2\'aa\'c8\'b7\'b1\'a3\'ba\'f3\'d2\'bb\'b6\'b0\'c2\'a5\'b5\'c4 i_s \'d4\'da\'c7\'b0\'d2\'bb\'b6\'b0\'c2\'a5\'b5\'c4 i_e \'d6\'ae\'c7\'b0\
+\
+694. Number of Distinct Islands\
+1. dfs\'a3\'ac\'c8\'e7\'b9\'fb\'b8\'c3\'b5\'e3\'ca\'c71\'a3\'ac\'d4\'f2\'b4\'a2\'b4\'e6\'bd\'f8path\'d6\'d0\'a3\'ac\'b2\'a2\'b0\'d1\'b8\'c3\'b5\'e3\'b8\'c4\'b3\'c90\'a3\'ac\'c8\'bb\'ba\'f3\'d4\'d9dfs\'c9\'cf\'cf\'c2\'d7\'f3\'d3\'d2\
+2. path\'b5\'c4\'b4\'a2\'b4\'e6\'d0\'ce\'ca\'bd\'ce\'aa(pt1_x - origin_x, pt1_y - origin_y, pt2_x - origin_x, pt2_y - origin_y, \'a1\'ad)\
+3. \'c3\'bf\'bb\'f1\'b5\'c3\'d2\'bb\'b8\'f6\'d0\'c2\'b5\'c4path\'a3\'aci.e. \'cc\'bd\'b2\'e2\'b5\'bd\'d0\'c2\'b5\'c4\'b5\'ba\'a3\'ac\'d4\'f2\'b4\'e6\'d4\'daans\'d6\'d0\'a3\'a8ans \'ca\'c7\'d2\'bb\'b8\'f6set()\'a3\'a9\
+\
+1102. Path With Maximum Minimum Value\
+1. union-find, elem\'b4\'d3\'b4\'f3\'b5\'bd\'d0\'a1\'c5\'c5\'d0\'f2\'a3\'ac\'d2\'c0\'b4\'ce\'cc\'ee\'c8\'ebmatrix\'d6\'d0\'a3\'ac\'d6\'b1\'b5\'bdmatrix\'b5\'c4\'c6\'f0\'b5\'e3\'ba\'cd\'d6\'d5\'b5\'e3union\'c1\'cb\'c6\'f0\'c0\'b4\'a3\'a8\'d7\'a2\'d2\'e2\'a3\'ac\'c3\'bf\'b8\'f6\'b5\'e3\'cf\'c8\'ba\'cd\'d7\'d4\'bc\'baunion\'a3\'ac\'c8\'bb\'ba\'f3\'bf\'b4\'cb\'c4\'d6\'dc\'d3\'d0\'c3\'bb\'d3\'d0\'d2\'d1\'be\'advisit\'b9\'fd\'b5\'c4\'b5\'e3\'a3\'ac\'c8\'e7\'b9\'fb\'d3\'d0\'b2\'c5\'d0\'e8\'d2\'aaunion\'c6\'f0\'c0\'b4\'a3\'a9\
+2. \'b5\'da\'b6\'fe\'d6\'d6\'b7\'bd\'b7\'a8\'a3\'acdfs + binary search\'a3\'acstart = min(matrix[0,0], matrix[m,n]), end = max(matrix)\
+3. \'cf\'c8\'c8\'a1\'b5\'c3 mid = (start + end) / 2\'a3\'acmatrix\'d6\'d0\'d0\'a1\'d3\'damid\'b5\'c4 elem \'b6\'bcset zero\'a3\'ac\'c8\'bb\'ba\'f3\'cd\'a8\'b9\'fddfs\'b2\'e9\'bf\'b4\'c6\'f0\'b5\'e3\'ba\'cd\'d6\'d5\'b5\'e3\'ca\'c7\'b7\'f1\'cf\'e0\'cd\'a8\'a1\'a3\'c8\'e7\'b9\'fb\'cf\'e0\'cd\'a8\'a3\'acstart <- mid\'a3\'bb\'c8\'e7\'b9\'fb\'b2\'bb\'cd\'a8\'a3\'acend <- mid\
+\
+1167. Minimum Cost to Connect Sticks\
+1. \'d3\'c3heapq\'a3\'ac\'c3\'bf\'b4\'cepop\'d7\'ee\'d0\'a1\'b5\'c4\'c1\'bd\'b8\'f6\'b3\'f6\'c0\'b4\'a3\'ac\'cf\'e0\'bc\'d3\'d4\'dapush\'bb\'d8\'c8\'a5\
+\
+866. Prime Palindrome\
+1. \'b1\'e9\'c0\'fa 0 - 99999\'a3\'ac\'c3\'bf\'b8\'f6\'ca\'fd\'b3\'c6\'ce\'aaroot\'a3\'ac\'c8\'e7\'b9\'fbroot = 125\'a3\'ac\'c4\'c7\'b8\'f6\'cb\'fc\'bf\'c9\'d2\'d4\'b9\'b9\'b3\'c9\'c1\'bd\'b8\'f6palindrome\'a3\'ac12521 \'ba\'cd 125521\
+2. \'c0\'fd\'c8\'e7\'a3\'ac\'b5\'b1root\'ce\'aa\'c1\'bd\'ce\'bb\'ca\'fd\'ca\'b1\'a3\'acroot \'b1\'e9\'c0\'fa 10~99\'a3\'acfirst pass \'b9\'b9\'d4\'ec3\'ce\'bb\'ca\'fd\'b5\'c4palindrome\'a3\'acsecond pass \'b9\'b9\'d4\'ec4\'ce\'bb\'ca\'fd\'b5\'c4palindrome\
+3. \'c3\'bf\'b5\'b1\'d2\'bb\'b8\'f6palindrom\'b9\'b9\'d4\'ec\'b3\'f6\'c0\'b4\'a3\'ac\'c5\'d0\'b6\'cf\'ca\'c7\'b7\'f1\'b4\'f3\'d3\'daN\'c7\'d2\'ca\'c7\'b7\'f1prime\'a3\'a8\'d7\'a2\'d2\'e2\'a3\'ac\'c5\'d0\'b6\'cf\'ca\'c7\'b7\'f1\'b4\'f3\'d3\'daN\'d3\'a6\'b7\'c5\'d4\'da\'c7\'b0\'c3\'e6\'a3\'ac\'bd\'da\'ca\'a1\'ca\'b1\'bc\'e4\'a3\'a9\
+4. tips\'a3\'ba\'b3\'fd\'c1\'cb11\'d2\'d4\'cd\'e2\'b5\'c4\'c3\'bf\'b8\'f6\'c5\'bc\'ca\'fd\'b3\'a4\'b6\'c8\'b5\'c4palindrome\'d2\'bb\'b6\'a8\'c4\'dc\'b1\'bb11\'d5\'fb\'b3\'fd\'a3\'a8i.e. \'b2\'bb\'ca\'c7prime\'a3\'a9\'a3\'ac\'d2\'f2\'b4\'cb\'bf\'c9\'d2\'d4skip\'b5\'f4\'cb\'f9\'d3\'d0\'c5\'bc\'ca\'fd\'b3\'a4\'b6\'c8\'b5\'c4palindrome\
+\
+1099. Two Sum Less Than K\
+1. sort, \'c8\'bb\'ba\'f3\'c1\'bd\'b8\'f6\'d6\'b8\'d5\'eb\'d2\'bb\'cd\'b7\'d2\'bb\'ce\'b2\'a3\'ac\'c8\'e7\'b9\'fbsum < K\'be\'cd\'d2\'c6\'b6\'af\'cd\'b7\'d6\'b8\'d5\'eb\'a3\'ac\'b7\'f1\'d4\'f2\'a3\'ac\'be\'cd\'d2\'c6\'b6\'af\'ce\'b2\'d6\'b8\'d5\'eb\
+\
+\
+\
+\
+}
